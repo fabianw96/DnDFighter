@@ -1,0 +1,6 @@
+# ninja log v6
+4	214	7462123088847244	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj.ddi	2814aad6912fce97
+214	235	7462123090943333	CMakeFiles/CPPConsoleProject.dir/CXX.dd	4bae9953f77981ce
+235	730	7462123091156230	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj	8d42b1bc47fe9f54
+214	235	7462123090943333	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj.modmap	4bae9953f77981ce
+730	1095	7462123096101109	CPPConsoleProject.exe	4c78c13783cf828

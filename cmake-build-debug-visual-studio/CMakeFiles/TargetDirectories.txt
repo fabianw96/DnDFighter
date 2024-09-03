@@ -1,0 +1,3 @@
+C:/Users/wittg/Documents/SAE/Projekte/3. Semester/CPPConsoleProject/cmake-build-debug-visual-studio/CMakeFiles/CPPConsoleProject.dir
+C:/Users/wittg/Documents/SAE/Projekte/3. Semester/CPPConsoleProject/cmake-build-debug-visual-studio/CMakeFiles/edit_cache.dir
+C:/Users/wittg/Documents/SAE/Projekte/3. Semester/CPPConsoleProject/cmake-build-debug-visual-studio/CMakeFiles/rebuild_cache.dir
