@@ -16,4 +16,5 @@ int main() {
             //If the value is higher than the enemies AC the attack hits
         //If the attack hits, damage is calculated based on the equipped weapon + their stats
         //The damage is then subtracted from the HP of the character that got hit
+    
 }
