@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\CPPConsoleProject.dir\\Game.cpp.obj",
+            "outputs": [
+                "D:\\Fabian\\DnDFighter\\out\\build\\x64-Debug\\vc140.pdb",
+                "CMakeFiles\\CPPConsoleProject.dir\\Game.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}

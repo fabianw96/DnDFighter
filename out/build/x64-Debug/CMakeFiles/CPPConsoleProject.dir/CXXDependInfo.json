@@ -1,0 +1,18 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "MSVC",
+	"compiler-id" : "MSVC",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "D:/Fabian/DnDFighter/out/build/x64-Debug",
+	"dir-cur-src" : "D:/Fabian/DnDFighter",
+	"dir-top-bld" : "D:/Fabian/DnDFighter/out/build/x64-Debug",
+	"dir-top-src" : "D:/Fabian/DnDFighter",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "D:/Fabian/DnDFighter/out/build/x64-Debug/CMakeFiles/CPPConsoleProject.dir"
+}
