@@ -1,4 +1,7 @@
 # ninja log v6
-12	555	7462063225702869	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj	8df7257d0d3bf344
-556	671	7462063231140304	CPPConsoleProject.exe	4b592b0506697d7e
-5	473	7462118949865624	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj	8df7257d0d3bf344
+5	564	7476089325055167	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj	f34c8421f46134d3
+662	768	7476089331617118	CPPConsoleProject.exe	451dadccd767e370
+3	207	7476861572102237	build.ninja	cb219c8dbfdfedc2
+42	897	7476049194632034	CMakeFiles/CPPConsoleProject.dir/Monster.cpp.obj	cbcd3bdd6cedde55
+9	621	7476089325085304	CMakeFiles/CPPConsoleProject.dir/MonsterFactory.cpp.obj	951fc30c503f0178
+13	662	7476089325135432	CMakeFiles/CPPConsoleProject.dir/EntityData.cpp.obj	de4234969a8f859

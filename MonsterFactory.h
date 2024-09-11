@@ -1,10 +1,13 @@
 #ifndef MONSTERFACTORY_H
 #define MONSTERFACTORY_H
+#include <vector>
 
-class MonsterFactory
+#include "EntityData.h"
+
+class CMonsterFactory
 {
 public:
-	void CreateMonster();
+	std::vector<CEntityData> CreateMonster();
 };
 
 #endif

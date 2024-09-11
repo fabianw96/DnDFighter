@@ -5,14 +5,14 @@
 	"compiler-simulate-id" : "",
 	"config" : "Debug",
 	"cxx-modules" : {},
-	"dir-cur-bld" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/CPPConsoleProject/cmake-build-debug-visual-studio",
-	"dir-cur-src" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/CPPConsoleProject",
-	"dir-top-bld" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/CPPConsoleProject/cmake-build-debug-visual-studio",
-	"dir-top-src" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/CPPConsoleProject",
+	"dir-cur-bld" : "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug-visual-studio",
+	"dir-cur-src" : "E:/SAE/Projects/3. Semester/DnDFighter",
+	"dir-top-bld" : "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug-visual-studio",
+	"dir-top-src" : "E:/SAE/Projects/3. Semester/DnDFighter",
 	"exports" : [],
 	"forward-modules-from-target-dirs" : [],
 	"include-dirs" : [],
 	"language" : "CXX",
 	"linked-target-dirs" : [],
-	"module-dir" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/CPPConsoleProject/cmake-build-debug-visual-studio/CMakeFiles/CPPConsoleProject.dir"
+	"module-dir" : "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug-visual-studio/CMakeFiles/CPPConsoleProject.dir"
 }

@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SE:\SAE\Projects\CPPConsoleProject -BE:\SAE\Projects\CPPConsoleProject\cmake-build-debug
+  command = C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -S"E:\SAE\Projects\3. Semester\DnDFighter" -B"E:\SAE\Projects\3. Semester\DnDFighter\cmake-build-debug"
   description = Re-running CMake...
   generator = 1
 

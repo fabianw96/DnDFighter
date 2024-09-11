@@ -4,3 +4,18 @@
 235	730	7462123091156230	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj	8d42b1bc47fe9f54
 214	235	7462123090943333	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj.modmap	4bae9953f77981ce
 730	1095	7462123096101109	CPPConsoleProject.exe	4c78c13783cf828
+10	39	7474270703092255	CMakeFiles/CPPConsoleProject.dir/Monster.cpp.obj.ddi	2a1e664c829359d5
+3	103	7474270703017185	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj.ddi	8b0f39f3605b3d3d
+7	111	7474270703057201	CMakeFiles/CPPConsoleProject.dir/MonsterFactory.cpp.obj.ddi	995178d7f3bd10a
+14	113	7474270703132267	CMakeFiles/CPPConsoleProject.dir/EntityData.cpp.obj.ddi	6228a29f74f2158e
+113	135	7474270704318917	CMakeFiles/CPPConsoleProject.dir/CXX.dd	123f5802458ea618
+113	135	7474270704318917	E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug-visual-studio/CMakeFiles/CPPConsoleProject.dir/CXXModules.json	123f5802458ea618
+113	135	7474270704318917	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj.modmap	123f5802458ea618
+113	135	7474270704318917	CMakeFiles/CPPConsoleProject.dir/MonsterFactory.cpp.obj.modmap	123f5802458ea618
+113	135	7474270704318917	CMakeFiles/CPPConsoleProject.dir/Monster.cpp.obj.modmap	123f5802458ea618
+113	135	7474270704318917	CMakeFiles/CPPConsoleProject.dir/EntityData.cpp.obj.modmap	123f5802458ea618
+142	184	7474270704404257	CMakeFiles/CPPConsoleProject.dir/Monster.cpp.obj	c590af4ae43057cd
+135	698	7474270704348928	CMakeFiles/CPPConsoleProject.dir/main.cpp.obj	c0250db9585fe3c0
+138	779	7474270704379222	CMakeFiles/CPPConsoleProject.dir/MonsterFactory.cpp.obj	988755e2a4b5d113
+145	804	7474270704444350	CMakeFiles/CPPConsoleProject.dir/EntityData.cpp.obj	bd9854b8a57088e7
+804	1063	7474270711030529	CPPConsoleProject.exe	7ce9e9d852ddfc53

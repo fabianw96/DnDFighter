@@ -797,8 +797,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/CPPConsoleProject/cmake-build-debug-visual-studio",
-		"source" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/CPPConsoleProject"
+		"build" : "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug-visual-studio",
+		"source" : "E:/SAE/Projects/3. Semester/DnDFighter"
 	},
 	"version" : 
 	{

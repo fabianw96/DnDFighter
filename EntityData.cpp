@@ -1,8 +1,23 @@
 #include <iostream>
 #include "EntityData.h"
 
+CEntityData::CEntityData() = default;
 
-std::vector<std::pair<std::string, std::vector<int>>> EntityData::readCsvData(std::string filename)
+
+CEntityData::CEntityData(const std::string& a_name, float a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, bool a_isAlive)
+{
+	m_Name = a_name;
+	m_HealthPoints = a_healthPoints;
+	m_ArmorClass = a_armorClass;
+	m_Strength = a_strength;
+	m_Dexterity = a_dexterity;
+	m_Constitution = a_constitution;
+	m_Intelligence = a_intelligence;
+	m_Wisdom = a_wisdom;
+	m_BIsAlive = a_isAlive;
+}
+
+std::vector<std::pair<std::string, std::vector<int>>> CEntityData::ReadCsvData(const std::string& filename)
 {
 	std::vector<std::pair<std::string, std::vector<int>>> resultData;
 
@@ -46,4 +61,5 @@ std::vector<std::pair<std::string, std::vector<int>>> EntityData::readCsvData(st
 
 	return resultData;
 }
+
 

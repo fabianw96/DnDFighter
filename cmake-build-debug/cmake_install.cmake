@@ -1,4 +1,4 @@
-# Install script for directory: E:/SAE/Projects/CPPConsoleProject
+# Install script for directory: E:/SAE/Projects/3. Semester/DnDFighter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/SAE/Projects/CPPConsoleProject/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
