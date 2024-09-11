@@ -20,7 +20,7 @@ int main()
 
     CMonsterFactory *factory = new CMonsterFactory();
     std::vector<CEntityData> monsters = factory->CreateMonster();
-    CEntityData *Player = new CEntityData("Fili", 100, 15, 10,10,10,10,10);
+    CEntityData *Player = new CEntityData();
 
-    std::cout << monsters.size() << "\n";
+    std::cout << monsters[0].GetCharisma() << "\n";
 }

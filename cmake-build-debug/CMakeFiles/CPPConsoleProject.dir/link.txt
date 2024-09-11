@@ -1,0 +1,3 @@
+C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\CPPConsoleProject.dir/objects.a
+C:\Users\wittg\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\CPPConsoleProject.dir/objects.a @CMakeFiles\CPPConsoleProject.dir\objects1.rsp
+C:\Users\wittg\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\CPPConsoleProject.dir/objects.a -Wl,--no-whole-archive -o CPPConsoleProject.exe -Wl,--out-implib,libCPPConsoleProject.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CPPConsoleProject.dir\linkLibs.rsp

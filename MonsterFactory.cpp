@@ -7,7 +7,8 @@
 std::vector<CEntityData> CMonsterFactory::CreateMonster()
 {
 	CEntityData *entity_data = new CEntityData();
-	std::vector<std::pair<std::string, std::vector<int>>> MonsterData = entity_data->ReadCsvData("E:/SAE/Projects/3. Semester/DnDFighter/Bestiary.csv");
+	
+	std::vector<std::pair<std::string, std::vector<int>>> MonsterData = entity_data->ReadCsvData("../Bestiary.csv");
 
 	//iterate through MonsterData and create a new monster for every entry in the Vector. Then save it to a new vector.
 
@@ -18,9 +19,15 @@ std::vector<CEntityData> CMonsterFactory::CreateMonster()
 		const std::string& name = monster_data.first;
 		const std::vector<int>& stats = monster_data.second;
 
-		if (stats.size() >= 7)
+		// if (stats[2] + stats[3] + stats[4] + stats[5] + stats[6] <= )
+		// {
+		// 	
+		// }
+
+		if (stats.size() >= 8)
 		{
-			CEntityData monster(name, static_cast<float>(stats[0]), stats[1], stats[2], stats[3], stats[4], stats[5], stats[6]);
+			
+			CEntityData monster(name, static_cast<float>(stats[0]), stats[1], stats[2], stats[3], stats[4], stats[5], stats[6], stats[7]);
 			monsters.emplace_back(monster);
 		}
 		else {

@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug",
-		"source" : "E:/SAE/Projects/3. Semester/DnDFighter"
+		"build" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug",
+		"source" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter"
 	},
 	"version" : 
 	{
