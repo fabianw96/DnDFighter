@@ -25,6 +25,7 @@ public:
 	std::vector<std::pair<std::string, std::vector<int>>> ReadCsvData(const std::string& filename);
 	CEntityData();
 	CEntityData(const std::string& a_name, float a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level = 0, bool a_isAlive = true);
+	CEntityData CreatePlayer();
 	
 	float GetHealthPoints() { return m_iHealthPoints; }
 	int GetArmorClass() { return m_iArmorClass; }

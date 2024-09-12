@@ -1,38 +1,7 @@
 #include <iostream>
+#include <algorithm>
 #include "EntityData.h"
-
-CEntityData::CEntityData()
-{
-	char iUserInput;
-	std::vector<int> playerStats = {15,14,13,12,19,8};
-	std::vector<std::string> statChoices = {"[S]trength", "[D]exterity", "[C]onstitution", "[I]ntelligence", "[W]isdom", "Ch[a]risma"};
-
-	while (!playerStats.empty())
-	{
-		std::cout << "Please distribute your stats. \n";
-		for (auto const &choice : statChoices)
-		{
-			std::cout << choice << std::endl;
-		}
-		
-		//Make player distribute the stats to str, dex, const, int, wis, char
-		std::cout << "Choose your Stat: \n";
-		std::cin >> iUserInput;
-		
-		//erase the values that are used
-		playerStats.erase(playerStats.begin());
-		// statChoices.erase(statChoices.begin() + iUserInput - 1);
-
-		// for (std::vector<std::string>::const_iterator iterator = statChoices.cbegin(); iterator != statChoices.end(); ++iterator)
-		// {
-		// 	if (statChoices[iterator].find(iUserInput))
-		// 	{
-		// 		statChoices.;
-		// 	}
-		// }
-	}
-};
-
+#include "HelperMacros.h"
 
 CEntityData::CEntityData(const std::string& a_name, float a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level, bool a_isAlive)
 {
@@ -48,6 +17,47 @@ CEntityData::CEntityData(const std::string& a_name, float a_healthPoints, int a_
 	m_iLevel = a_level;
 	m_bIsAlive = a_isAlive;
 }
+
+CEntityData CEntityData::CreatePlayer()
+{
+	
+	int iUserInput;
+	std::vector<int> statValues = {15,14,13,12,19,8};
+	std::vector<std::string> statChoices = {"Str", "Dex", "Con", "Int", "Wis", "Char"};
+	
+	std::string playerName;
+	std::vector<int> playerValues = {1,1,1,1,1,1};
+
+	std::cout << "Please enter your Name: ";
+	std::cin >> playerName;
+
+	while (!statValues.empty())
+	{
+		std::cout << "Please distribute your stats. \n";
+		for (auto const &choice : statChoices)
+		{
+			std::cout << choice << ",";
+		}
+
+		std::cout << "Enter the amount of Stats you want to use for: " << statChoices[0] << "\n";
+		
+		//erase the values that are used
+		statValues.erase(statValues.begin());
+		
+		//std::find findet den ersten match im statchoices vector zum userinput
+		auto it = std::find(statChoices.begin(), statChoices.end(), iUserInput);
+		statChoices.erase(it);
+		// playerValues.insert(playerValues.begin());
+		
+		
+		CLEAR_SCREEN;
+	}
+
+	CEntityData Player = CEntityData(playerName, 100, 10, playerValues[0], playerValues[1], playerValues[2], playerValues[3], playerValues[4], playerValues[5]);	
+
+	return Player;
+}
+
 
 std::vector<std::pair<std::string, std::vector<int>>> CEntityData::ReadCsvData(const std::string& filename)
 {

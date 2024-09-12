@@ -1,5 +1,7 @@
 #include <iostream>
 #include "MonsterFactory.h"
+#include "HelperMacros.h"
+
 
 int main()
 {
@@ -22,5 +24,6 @@ int main()
     std::vector<CEntityData> monsters = factory->CreateMonster();
     CEntityData *Player = new CEntityData();
 
-    std::cout << monsters[0].GetCharisma() << "\n";
+    DELETE_POINTER(factory);
+    DELETE_POINTER(Player);
 }

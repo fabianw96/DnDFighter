@@ -7,4 +7,5 @@ add_executable(CPPConsoleProject main.cpp
  "MonsterFactory.cpp" "MonsterFactory.h" "EntityData.h" "EntityData.cpp"
         Weapon.cpp
         Weapon.h
+        HelperMacros.h
 )

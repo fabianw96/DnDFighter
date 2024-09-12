@@ -1,6 +1,7 @@
 #include "MonsterFactory.h"
 #include "EntityData.h"
 #include <iostream>
+#include <numeric>
 #include <vector>
 
 
@@ -19,14 +20,11 @@ std::vector<CEntityData> CMonsterFactory::CreateMonster()
 		const std::string& name = monster_data.first;
 		const std::vector<int>& stats = monster_data.second;
 
-		// if (stats[2] + stats[3] + stats[4] + stats[5] + stats[6] <= )
-		// {
-		// 	
-		// }
+		int combinedStats = std::accumulate(stats.begin(), stats.end(),0);
+		std::cout << combinedStats << "\n";
 
 		if (stats.size() >= 8)
 		{
-			
 			CEntityData monster(name, static_cast<float>(stats[0]), stats[1], stats[2], stats[3], stats[4], stats[5], stats[6], stats[7]);
 			monsters.emplace_back(monster);
 		}
