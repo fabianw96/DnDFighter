@@ -3,6 +3,8 @@
 #include "EntityData.h"
 #include "HelperMacros.h"
 
+CEntityData::CEntityData() = default;
+
 CEntityData::CEntityData(const std::string& a_name, float a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level, bool a_isAlive)
 {
 	m_sName = a_name;
@@ -20,9 +22,9 @@ CEntityData::CEntityData(const std::string& a_name, float a_healthPoints, int a_
 
 CEntityData CEntityData::CreatePlayer()
 {
-	
+
 	int iUserInput;
-	std::vector<int> statValues = {15,14,13,12,19,8};
+	std::vector<int> statValues = {15,14,13,12,10,8};
 	std::vector<std::string> statChoices = {"Str", "Dex", "Con", "Int", "Wis", "Char"};
 	
 	std::string playerName;
@@ -31,27 +33,27 @@ CEntityData CEntityData::CreatePlayer()
 	std::cout << "Please enter your Name: ";
 	std::cin >> playerName;
 
-	while (!statValues.empty())
+	std::cout << "Please distribute your stats. \n";
+
+
+	for (int i = 0; i < playerValues.size(); ++i)
 	{
-		std::cout << "Please distribute your stats. \n";
-		for (auto const &choice : statChoices)
+		std::cout << "Please enter the amount of Stats you want to use for: " << statChoices[i] << "\n";
+		std::cout << "You can still use these stats: ";
+
+		for (int statValue : statValues)
 		{
-			std::cout << choice << ",";
+			std::cout << statValue << " ";
 		}
 
-		std::cout << "Enter the amount of Stats you want to use for: " << statChoices[0] << "\n";
-		
-		//erase the values that are used
-		statValues.erase(statValues.begin());
-		
-		//std::find findet den ersten match im statchoices vector zum userinput
-		auto it = std::find(statChoices.begin(), statChoices.end(), iUserInput);
-		statChoices.erase(it);
-		// playerValues.insert(playerValues.begin());
-		
-		
-		CLEAR_SCREEN;
+		std::cout << "\n";
+
+		std::cin >> iUserInput;
+
+		playerValues[i] += iUserInput;
 	}
+
+	CLEAR_SCREEN;
 
 	CEntityData Player = CEntityData(playerName, 100, 10, playerValues[0], playerValues[1], playerValues[2], playerValues[3], playerValues[4], playerValues[5]);	
 

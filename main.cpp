@@ -20,10 +20,14 @@ int main()
         //If the attack hits, damage is calculated based on the equipped weapon + their stats
         //The damage is then subtracted from the HP of the character that got hit
 
-    CMonsterFactory *factory = new CMonsterFactory();
+    CMonsterFactory *factory = nullptr;
+    factory = new CMonsterFactory();
+
+    CEntityData *entity_data = new CEntityData();
+
     std::vector<CEntityData> monsters = factory->CreateMonster();
-    CEntityData *Player = new CEntityData();
+    CEntityData player = entity_data->CreatePlayer();
 
     DELETE_POINTER(factory);
-    DELETE_POINTER(Player);
+    DELETE_POINTER(entity_data);
 }
