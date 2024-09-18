@@ -26,7 +26,8 @@ public:
 	CEntityData();
 	CEntityData(const std::string& a_name, float a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level = 0, bool a_isAlive = true);
 	CEntityData CreatePlayer();
-	
+
+	std::string GetName() { return m_sName; }
 	float GetHealthPoints() { return m_iHealthPoints; }
 	int GetArmorClass() { return m_iArmorClass; }
 	int GetStrength() { return m_iStrength; }

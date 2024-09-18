@@ -8,4 +8,6 @@ add_executable(CPPConsoleProject main.cpp
         Weapon.cpp
         Weapon.h
         HelperMacros.h
+        Game.cpp
+        Game.h
 )

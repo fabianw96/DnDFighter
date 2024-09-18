@@ -1,6 +1,10 @@
 #include <iostream>
 #include <algorithm>
 #include "EntityData.h"
+
+#include <map>
+#include <set>
+
 #include "HelperMacros.h"
 
 CEntityData::CEntityData() = default;
@@ -20,11 +24,14 @@ CEntityData::CEntityData(const std::string& a_name, float a_healthPoints, int a_
 	m_bIsAlive = a_isAlive;
 }
 
+/// <summary>
+/// <para> Create a player from Userinput</para>
+/// </summary>
 CEntityData CEntityData::CreatePlayer()
 {
 
 	int iUserInput;
-	std::vector<int> statValues = {15,14,13,12,10,8};
+	std::set<int> statValues = {15,14,13,12,10,8};
 	std::vector<std::string> statChoices = {"Str", "Dex", "Con", "Int", "Wis", "Char"};
 	
 	std::string playerName;
@@ -34,14 +41,13 @@ CEntityData CEntityData::CreatePlayer()
 	std::cin >> playerName;
 
 	std::cout << "Please distribute your stats. \n";
-
-
+	
 	for (int i = 0; i < playerValues.size(); ++i)
 	{
 		std::cout << "Please enter the amount of Stats you want to use for: " << statChoices[i] << "\n";
 		std::cout << "You can still use these stats: ";
 
-		for (int statValue : statValues)
+		for (const int statValue : statValues)
 		{
 			std::cout << statValue << " ";
 		}
@@ -50,19 +56,32 @@ CEntityData CEntityData::CreatePlayer()
 
 		std::cin >> iUserInput;
 
+		while (!statValues.contains(iUserInput))
+		{
+			std::cout << "The Value you have entered does not exist. \n";
+			std::cout << "Please try again: ";
+			std::cin >> iUserInput;
+		}
+		
 		playerValues[i] += iUserInput;
+		statValues.erase(std::ranges::find(statValues, iUserInput));
+		
+		CLEAR_SCREEN;
 	}
 
-	CLEAR_SCREEN;
-
-	CEntityData Player = CEntityData(playerName, 100, 10, playerValues[0], playerValues[1], playerValues[2], playerValues[3], playerValues[4], playerValues[5]);	
+	CEntityData Player = CEntityData(playerName, 100, 10, playerValues[0], playerValues[1], playerValues[2], playerValues[3], playerValues[4], playerValues[5], 1);	
 
 	return Player;
 }
 
-
+/// <summary>
+/// <para> Function to extract Data from a CSV file. </para>
+/// <param name="filename"> Path to CSV file </param>
+/// <returns> A vector of a pair consisting of a string and a int vector </returns>
+/// </summary>
 std::vector<std::pair<std::string, std::vector<int>>> CEntityData::ReadCsvData(const std::string& filename)
 {
+	//maybe use map/dictionary?
 	std::vector<std::pair<std::string, std::vector<int>>> resultData;
 
 	std::ifstream inputFile(filename);

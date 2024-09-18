@@ -152,6 +152,30 @@ EntityData.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/EntityData.cpp.s
 .PHONY : EntityData.cpp.s
 
+Game.obj: Game.cpp.obj
+.PHONY : Game.obj
+
+# target to build an object file
+Game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/Game.cpp.obj
+.PHONY : Game.cpp.obj
+
+Game.i: Game.cpp.i
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
 MonsterFactory.obj: MonsterFactory.cpp.obj
 .PHONY : MonsterFactory.obj
 
@@ -236,6 +260,9 @@ help:
 	@echo ... EntityData.obj
 	@echo ... EntityData.i
 	@echo ... EntityData.s
+	@echo ... Game.obj
+	@echo ... Game.i
+	@echo ... Game.s
 	@echo ... MonsterFactory.obj
 	@echo ... MonsterFactory.i
 	@echo ... MonsterFactory.s
