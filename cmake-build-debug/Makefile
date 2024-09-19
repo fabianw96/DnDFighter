@@ -341,6 +341,30 @@ Weapon.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/Weapon.cpp.s
 .PHONY : Weapon.cpp.s
 
+WindowManager.obj: WindowManager.cpp.obj
+.PHONY : WindowManager.obj
+
+# target to build an object file
+WindowManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/WindowManager.cpp.obj
+.PHONY : WindowManager.cpp.obj
+
+WindowManager.i: WindowManager.cpp.i
+.PHONY : WindowManager.i
+
+# target to preprocess a source file
+WindowManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/WindowManager.cpp.i
+.PHONY : WindowManager.cpp.i
+
+WindowManager.s: WindowManager.cpp.s
+.PHONY : WindowManager.s
+
+# target to generate assembly for a file
+WindowManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/WindowManager.cpp.s
+.PHONY : WindowManager.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -396,6 +420,9 @@ help:
 	@echo ... Weapon.obj
 	@echo ... Weapon.i
 	@echo ... Weapon.s
+	@echo ... WindowManager.obj
+	@echo ... WindowManager.i
+	@echo ... WindowManager.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

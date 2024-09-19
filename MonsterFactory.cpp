@@ -11,17 +11,12 @@ std::vector<CEntityData> CMonsterFactory::CreateMonster()
 	
 	std::vector<std::pair<std::string, std::vector<int>>> MonsterData = entity_data->ReadCsvData("../Bestiary.csv");
 
-	//iterate through MonsterData and create a new monster for every entry in the Vector. Then save it to a new vector.
-
 	std::vector<CEntityData> monsters;
 
 	for (const auto& monster_data: MonsterData)
 	{
 		const std::string& name = monster_data.first;
 		const std::vector<int>& stats = monster_data.second;
-
-		int combinedStats = std::accumulate(stats.begin(), stats.end(),0);
-		// std::cout << combinedStats << "\n";
 
 		if (stats.size() >= 9)
 		{

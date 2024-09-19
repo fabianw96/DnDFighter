@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/Game.cpp" "CMakeFiles/DnDFighter.dir/Game.cpp.obj" "gcc" "CMakeFiles/DnDFighter.dir/Game.cpp.obj.d"
   "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/MonsterFactory.cpp" "CMakeFiles/DnDFighter.dir/MonsterFactory.cpp.obj" "gcc" "CMakeFiles/DnDFighter.dir/MonsterFactory.cpp.obj.d"
   "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/Weapon.cpp" "CMakeFiles/DnDFighter.dir/Weapon.cpp.obj" "gcc" "CMakeFiles/DnDFighter.dir/Weapon.cpp.obj.d"
+  "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/WindowManager.cpp" "CMakeFiles/DnDFighter.dir/WindowManager.cpp.obj" "gcc" "CMakeFiles/DnDFighter.dir/WindowManager.cpp.obj.d"
   "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/main.cpp" "CMakeFiles/DnDFighter.dir/main.cpp.obj" "gcc" "CMakeFiles/DnDFighter.dir/main.cpp.obj.d"
   )
 

@@ -29,7 +29,7 @@ CEntityData::CEntityData(const std::string& a_name, float a_healthPoints, int a_
 /// </summary>
 CEntityData CEntityData::CreatePlayer()
 {
-
+	
 	int iUserInput;
 	std::set<int> statValues = {15,14,13,12,10,8};
 	std::vector<std::string> statChoices = {"Str", "Dex", "Con", "Int", "Wis", "Char"};
@@ -38,7 +38,7 @@ CEntityData CEntityData::CreatePlayer()
 	std::vector<int> playerValues = {1,1,1,1,1,1};
 
 	std::cout << "Please enter your Name: ";
-	std::cin >> playerName;
+	std::cin >> playerName;	
 
 	std::cout << "Please distribute your stats. \n";
 	
@@ -69,7 +69,42 @@ CEntityData CEntityData::CreatePlayer()
 		CLEAR_SCREEN;
 	}
 
-	CEntityData Player = CEntityData(playerName, 100, 10, playerValues[0], playerValues[1], playerValues[2], playerValues[3], playerValues[4], playerValues[5], 1);	
+	std::cout << "Please choose a class: \n";
+	std::cout << "1. Barbarian \n";
+	std::cout << "2. Monk \n";
+	std::cout << "3. Fighter \n";
+	
+	std::cin >> iUserInput;
+
+	float playerHealth;
+	float playerAC;
+	
+	switch (iUserInput)
+	{
+	case 1:
+		{
+			playerHealth = playerValues[2] + 12;
+			playerAC = (playerValues[1] - 10) / 2 + (playerValues[2] - 10) / 2 + 10;
+		}
+		break;
+	case 2:
+		{
+			playerHealth = playerValues[2] + 8;
+			playerAC = (playerValues[1] - 10) / 2 + (playerValues[4] - 10) / 2 + 10;
+		}
+		break;
+	case 3:
+		{
+			playerHealth = playerValues[2] + 10;
+			playerAC = (playerValues[1] - 10) / 2 + 10;
+		}
+		break;
+	default:
+		std::cout << "That's not a valid class!";
+		break;
+	}
+
+	CEntityData Player = CEntityData(playerName, playerHealth, playerAC, playerValues[0], playerValues[1], playerValues[2], playerValues[3], playerValues[4], playerValues[5], 1);	
 
 	return Player;
 }

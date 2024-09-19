@@ -2,11 +2,13 @@
 #include <memory>
 #include "Game.h"
 #include "MonsterFactory.h"
+#include "raylib.h"
+#include "WindowManager.h"
 #include "HelperMacros.h"
-
 
 int main()
 {
+    bool bUseRaylib = true;
     //Print intro text
     //Let Player create a character
         //Player can choose a class and spend points on stats.
@@ -24,13 +26,24 @@ int main()
     
     const std::unique_ptr<CMonsterFactory> factory (new CMonsterFactory);
     const std::unique_ptr<CEntityData> entity_data (new CEntityData);
+    const std::unique_ptr<WindowManager> window_manager (new WindowManager);
+    const std::unique_ptr<Game> game (new Game);
 
     std::vector<CEntityData> monsters = factory->CreateMonster();
-    CEntityData player = entity_data->CreatePlayer();
 
-    const std::unique_ptr<Game> game (new Game);
-    
-    game->InitGame(player, monsters);
+    //choose a way to play the game
+    std::cout << "Please choose a way to open the game: [0] Peter mode [1] Raylib \n";
+    std::cin >> bUseRaylib;
 
-    
+    if (!bUseRaylib)
+    {
+        CEntityData player = entity_data->CreatePlayer();
+        game->InitGame(player, monsters);
+    }
+    else
+    {
+        window_manager->CreateGameWindow();
+    }
+        
+    return 0;
 }

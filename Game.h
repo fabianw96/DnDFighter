@@ -4,7 +4,11 @@
 
 #ifndef GAME_H
 #define GAME_H
+#include <memory>
+
 #include "EntityData.h"
+#include "raylib.h"
+#include "WindowManager.h"
 
 class Game {
 private:

@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/DnDFighter.dir/MonsterFactory.cpp.obj.d"
   "CMakeFiles/DnDFighter.dir/Weapon.cpp.obj"
   "CMakeFiles/DnDFighter.dir/Weapon.cpp.obj.d"
+  "CMakeFiles/DnDFighter.dir/WindowManager.cpp.obj"
+  "CMakeFiles/DnDFighter.dir/WindowManager.cpp.obj.d"
   "CMakeFiles/DnDFighter.dir/main.cpp.obj"
   "CMakeFiles/DnDFighter.dir/main.cpp.obj.d"
   "DnDFighter.exe"

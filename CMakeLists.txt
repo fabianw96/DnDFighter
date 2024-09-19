@@ -15,6 +15,8 @@ add_executable(DnDFighter main.cpp
         HelperMacros.h
         Game.cpp
         Game.h
+        WindowManager.cpp
+        WindowManager.h
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib)

@@ -3,13 +3,10 @@
 //
 
 #include "Game.h"
-#include "raylib.h"
 
 void Game::InitGame(const CEntityData& player, const std::vector<CEntityData>& monsters)
 {
     PopulateMonsterGroups(monsters);
-
-    
 }
 
 void Game::PopulateMonsterGroups(const std::vector<CEntityData>& monsters)
