@@ -3,24 +3,34 @@
 //
 
 #include "Game.h"
+#include "raylib.h"
 
-void Game::InitGame(CEntityData& player, std::vector<CEntityData>& monsters)
+void Game::InitGame(const CEntityData& player, const std::vector<CEntityData>& monsters)
 {
-    for (int i = 0; i < monsters.size(); ++i)
+    PopulateMonsterGroups(monsters);
+
+    
+}
+
+void Game::PopulateMonsterGroups(const std::vector<CEntityData>& monsters)
+{
+    for (const auto & monster : monsters)
     {
-        if (monsters.at(i).GetLevel() <= 10)
+        if (monster.GetLevel() <= 10)
         {
-            lowLevelMonster.emplace_back(monsters.at(i));
+            lowLevelMonster.emplace_back(monster);
         }
-        else if (monsters.at(i).GetLevel() > 10 && monsters.at(i).GetLevel() <= 20)
+        else if (monster.GetLevel() > 10 && monster.GetLevel() <= 20)
         {
-            midLevelMonster.emplace_back(monsters.at(i));
+            midLevelMonster.emplace_back(monster);
         }
-        else if (monsters.at(i).GetLevel() > 10 && monsters.at(i).GetLevel() > 20)
+        else if (monster.GetLevel() > 10 && monster.GetLevel() > 20)
         {
-            highLevelMonster.emplace_back(monsters.at(i));
+            highLevelMonster.emplace_back(monster);
         }
     }
 }
+
+
 
 

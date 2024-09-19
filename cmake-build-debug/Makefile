@@ -64,6 +64,26 @@ CMAKE_BINARY_DIR = "C:\Users\wittg\Documents\SAE\Projekte\3. Semester\DnDFighter
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
+	C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cpack.exe --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
+	C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cpack.exe --config ./CPackSourceConfig.cmake "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CPackSourceConfig.cmake"
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+.PHONY : package_source/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -83,6 +103,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	C:\Users\wittg\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -116,24 +181,76 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named CPPConsoleProject
+# Target rules for targets named DnDFighter
 
 # Build rule for target.
-CPPConsoleProject: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CPPConsoleProject
-.PHONY : CPPConsoleProject
+DnDFighter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 DnDFighter
+.PHONY : DnDFighter
 
 # fast build rule for target.
-CPPConsoleProject/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/build
-.PHONY : CPPConsoleProject/fast
+DnDFighter/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/build
+.PHONY : DnDFighter/fast
+
+#=============================================================================
+# Target rules for targets named uninstall
+
+# Build rule for target.
+uninstall: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 uninstall
+.PHONY : uninstall
+
+# fast build rule for target.
+uninstall/fast:
+	$(MAKE) $(MAKESILENT) -f libs\raylib\CMakeFiles\uninstall.dir\build.make libs/raylib/CMakeFiles/uninstall.dir/build
+.PHONY : uninstall/fast
+
+#=============================================================================
+# Target rules for targets named raylib
+
+# Build rule for target.
+raylib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 raylib
+.PHONY : raylib
+
+# fast build rule for target.
+raylib/fast:
+	$(MAKE) $(MAKESILENT) -f libs\raylib\raylib\CMakeFiles\raylib.dir\build.make libs/raylib/raylib/CMakeFiles/raylib.dir/build
+.PHONY : raylib/fast
+
+#=============================================================================
+# Target rules for targets named glfw
+
+# Build rule for target.
+glfw: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 glfw
+.PHONY : glfw
+
+# fast build rule for target.
+glfw/fast:
+	$(MAKE) $(MAKESILENT) -f libs\raylib\raylib\external\glfw\src\CMakeFiles\glfw.dir\build.make libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/build
+.PHONY : glfw/fast
+
+#=============================================================================
+# Target rules for targets named update_mappings
+
+# Build rule for target.
+update_mappings: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 update_mappings
+.PHONY : update_mappings
+
+# fast build rule for target.
+update_mappings/fast:
+	$(MAKE) $(MAKESILENT) -f libs\raylib\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\build.make libs/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
+.PHONY : update_mappings/fast
 
 EntityData.obj: EntityData.cpp.obj
 .PHONY : EntityData.obj
 
 # target to build an object file
 EntityData.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/EntityData.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/EntityData.cpp.obj
 .PHONY : EntityData.cpp.obj
 
 EntityData.i: EntityData.cpp.i
@@ -141,7 +258,7 @@ EntityData.i: EntityData.cpp.i
 
 # target to preprocess a source file
 EntityData.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/EntityData.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/EntityData.cpp.i
 .PHONY : EntityData.cpp.i
 
 EntityData.s: EntityData.cpp.s
@@ -149,7 +266,7 @@ EntityData.s: EntityData.cpp.s
 
 # target to generate assembly for a file
 EntityData.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/EntityData.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/EntityData.cpp.s
 .PHONY : EntityData.cpp.s
 
 Game.obj: Game.cpp.obj
@@ -157,7 +274,7 @@ Game.obj: Game.cpp.obj
 
 # target to build an object file
 Game.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/Game.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/Game.cpp.obj
 .PHONY : Game.cpp.obj
 
 Game.i: Game.cpp.i
@@ -165,7 +282,7 @@ Game.i: Game.cpp.i
 
 # target to preprocess a source file
 Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/Game.cpp.i
 .PHONY : Game.cpp.i
 
 Game.s: Game.cpp.s
@@ -173,7 +290,7 @@ Game.s: Game.cpp.s
 
 # target to generate assembly for a file
 Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/Game.cpp.s
 .PHONY : Game.cpp.s
 
 MonsterFactory.obj: MonsterFactory.cpp.obj
@@ -181,7 +298,7 @@ MonsterFactory.obj: MonsterFactory.cpp.obj
 
 # target to build an object file
 MonsterFactory.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/MonsterFactory.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/MonsterFactory.cpp.obj
 .PHONY : MonsterFactory.cpp.obj
 
 MonsterFactory.i: MonsterFactory.cpp.i
@@ -189,7 +306,7 @@ MonsterFactory.i: MonsterFactory.cpp.i
 
 # target to preprocess a source file
 MonsterFactory.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/MonsterFactory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/MonsterFactory.cpp.i
 .PHONY : MonsterFactory.cpp.i
 
 MonsterFactory.s: MonsterFactory.cpp.s
@@ -197,7 +314,7 @@ MonsterFactory.s: MonsterFactory.cpp.s
 
 # target to generate assembly for a file
 MonsterFactory.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/MonsterFactory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/MonsterFactory.cpp.s
 .PHONY : MonsterFactory.cpp.s
 
 Weapon.obj: Weapon.cpp.obj
@@ -205,7 +322,7 @@ Weapon.obj: Weapon.cpp.obj
 
 # target to build an object file
 Weapon.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/Weapon.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/Weapon.cpp.obj
 .PHONY : Weapon.cpp.obj
 
 Weapon.i: Weapon.cpp.i
@@ -213,7 +330,7 @@ Weapon.i: Weapon.cpp.i
 
 # target to preprocess a source file
 Weapon.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/Weapon.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/Weapon.cpp.i
 .PHONY : Weapon.cpp.i
 
 Weapon.s: Weapon.cpp.s
@@ -221,7 +338,7 @@ Weapon.s: Weapon.cpp.s
 
 # target to generate assembly for a file
 Weapon.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/Weapon.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/Weapon.cpp.s
 .PHONY : Weapon.cpp.s
 
 main.obj: main.cpp.obj
@@ -229,7 +346,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -237,7 +354,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -245,7 +362,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CPPConsoleProject.dir\build.make CMakeFiles/CPPConsoleProject.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -255,8 +372,18 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
+	@echo ... package
+	@echo ... package_source
 	@echo ... rebuild_cache
-	@echo ... CPPConsoleProject
+	@echo ... uninstall
+	@echo ... update_mappings
+	@echo ... DnDFighter
+	@echo ... glfw
+	@echo ... raylib
 	@echo ... EntityData.obj
 	@echo ... EntityData.i
 	@echo ... EntityData.s

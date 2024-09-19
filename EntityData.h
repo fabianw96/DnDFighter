@@ -28,15 +28,15 @@ public:
 	CEntityData CreatePlayer();
 
 	std::string GetName() { return m_sName; }
-	float GetHealthPoints() { return m_iHealthPoints; }
-	int GetArmorClass() { return m_iArmorClass; }
-	int GetStrength() { return m_iStrength; }
-	int GetDexterity() { return m_iDexterity; }
-	int GetConstitution() { return m_iConstitution; }
-	int GetIntelligence() { return m_iIntelligence; }
-	int GetWisdom() { return m_iWisdom; }
-	int GetCharisma() { return m_iCharisma; }
-	int GetLevel() { return m_iLevel; }
-	bool GetIsAlive() { return m_bIsAlive; }
+	[[nodiscard]] float GetHealthPoints() const { return m_iHealthPoints; }
+	[[nodiscard]] int GetArmorClass() const { return m_iArmorClass; }
+	[[nodiscard]] int GetStrength() const { return m_iStrength; }
+	[[nodiscard]] int GetDexterity() const { return m_iDexterity; }
+	[[nodiscard]] int GetConstitution() const { return m_iConstitution; }
+	[[nodiscard]] int GetIntelligence() const { return m_iIntelligence; }
+	[[nodiscard]] int GetWisdom() const { return m_iWisdom; }
+	[[nodiscard]] int GetCharisma() const { return m_iCharisma; }
+	[[nodiscard]] int GetLevel() const { return m_iLevel; }
+	[[nodiscard]] bool GetIsAlive() const { return m_bIsAlive; }
 };
 #endif // !ENTITYDATA_H

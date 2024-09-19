@@ -12,7 +12,8 @@ private:
     std::vector<CEntityData> midLevelMonster;
     std::vector<CEntityData> highLevelMonster;
 public:
-    void InitGame(CEntityData& player, std::vector<CEntityData>& monsters);
+    void InitGame(const CEntityData& player, const std::vector<CEntityData>& monsters);
+    void PopulateMonsterGroups(const std::vector<CEntityData>& monsters);
 };
 
 #endif //GAME_H

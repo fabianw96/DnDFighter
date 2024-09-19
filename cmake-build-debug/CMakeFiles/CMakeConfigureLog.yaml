@@ -593,3 +593,146 @@ events:
       Running the CXX compiler's linker: "C:/Users/wittg/AppData/Local/Programs/CLion/bin/mingw/bin/ld.exe" "-v"
       GNU ld (GNU Binutils) 2.40
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "libs/raylib/cmake/AddIfFlagCompiles.cmake:3 (CHECK_C_COMPILER_FLAG)"
+      - "libs/raylib/cmake/CompilerFlags.cmake:5 (add_if_flag_compiles)"
+      - "libs/raylib/CMakeLists.txt:29 (include)"
+    checks:
+      - "Performing Test COMPILER_HAS_THOSE_TOGGLES"
+    directories:
+      source: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1b5kaw"
+      binary: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1b5kaw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/cmake"
+    buildResult:
+      variable: "COMPILER_HAS_THOSE_TOGGLES"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1b5kaw'
+        
+        Run Build Command(s): C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe -E env VERBOSE=1 C:/Users/wittg/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f Makefile cmTC_d5017/fast
+        C:/Users/wittg/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_d5017.dir\\build.make CMakeFiles/cmTC_d5017.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1b5kaw'
+        Building C object CMakeFiles/cmTC_d5017.dir/src.c.obj
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe -DCOMPILER_HAS_THOSE_TOGGLES  -fdiagnostics-color=always   -Werror=pointer-arith -o CMakeFiles\\cmTC_d5017.dir\\src.c.obj -c "C:\\Users\\wittg\\Documents\\SAE\\Projekte\\3. Semester\\DnDFighter\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-1b5kaw\\src.c"
+        Linking C executable cmTC_d5017.exe
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\cmake\\win\\x64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_d5017.dir\\link.txt --verbose=1
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\cmake\\win\\x64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_d5017.dir/objects.a
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\ar.exe qc CMakeFiles\\cmTC_d5017.dir/objects.a @CMakeFiles\\cmTC_d5017.dir\\objects1.rsp
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_d5017.dir/objects.a -Wl,--no-whole-archive -o cmTC_d5017.exe -Wl,--out-implib,libcmTC_d5017.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_d5017.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1b5kaw'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "libs/raylib/src/external/glfw/CMakeLists.txt:64 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-do0qva"
+      binary: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-do0qva"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_MODULE_PATH: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/cmake;C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-do0qva'
+        
+        Run Build Command(s): C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe -E env VERBOSE=1 C:/Users/wittg/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f Makefile cmTC_44b4b/fast
+        C:/Users/wittg/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_44b4b.dir\\build.make CMakeFiles/cmTC_44b4b.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-do0qva'
+        Building C object CMakeFiles/cmTC_44b4b.dir/src.c.obj
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD  -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -fdiagnostics-color=always -o CMakeFiles\\cmTC_44b4b.dir\\src.c.obj -c "C:\\Users\\wittg\\Documents\\SAE\\Projekte\\3. Semester\\DnDFighter\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-do0qva\\src.c"
+        Linking C executable cmTC_44b4b.exe
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\cmake\\win\\x64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_44b4b.dir\\link.txt --verbose=1
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\cmake\\win\\x64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_44b4b.dir/objects.a
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\ar.exe qc CMakeFiles\\cmTC_44b4b.dir/objects.a @CMakeFiles\\cmTC_44b4b.dir\\objects1.rsp
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -Wl,--whole-archive CMakeFiles\\cmTC_44b4b.dir/objects.a -Wl,--no-whole-archive -o cmTC_44b4b.exe -Wl,--out-implib,libcmTC_44b4b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_44b4b.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-do0qva'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "libs/raylib/src/external/glfw/src/CMakeLists.txt:291 (check_include_file)"
+    checks:
+      - "Looking for dinput.h"
+    directories:
+      source: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-xnqfnq"
+      binary: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-xnqfnq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/cmake;C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "DINPUT_H_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-xnqfnq'
+        
+        Run Build Command(s): C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe -E env VERBOSE=1 C:/Users/wittg/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f Makefile cmTC_ab498/fast
+        C:/Users/wittg/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ab498.dir\\build.make CMakeFiles/cmTC_ab498.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-xnqfnq'
+        Building C object CMakeFiles/cmTC_ab498.dir/CheckIncludeFile.c.obj
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -std=gnu99 -fdiagnostics-color=always -o CMakeFiles\\cmTC_ab498.dir\\CheckIncludeFile.c.obj -c "C:\\Users\\wittg\\Documents\\SAE\\Projekte\\3. Semester\\DnDFighter\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-xnqfnq\\CheckIncludeFile.c"
+        Linking C executable cmTC_ab498.exe
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\cmake\\win\\x64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_ab498.dir\\link.txt --verbose=1
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\cmake\\win\\x64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_ab498.dir/objects.a
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\ar.exe qc CMakeFiles\\cmTC_ab498.dir/objects.a @CMakeFiles\\cmTC_ab498.dir\\objects1.rsp
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -Wl,--whole-archive CMakeFiles\\cmTC_ab498.dir/objects.a -Wl,--no-whole-archive -o cmTC_ab498.exe -Wl,--out-implib,libcmTC_ab498.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_ab498.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-xnqfnq'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "libs/raylib/src/external/glfw/src/CMakeLists.txt:292 (check_include_file)"
+    checks:
+      - "Looking for xinput.h"
+    directories:
+      source: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kzctob"
+      binary: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kzctob"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/cmake;C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "XINPUT_H_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kzctob'
+        
+        Run Build Command(s): C:/Users/wittg/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe -E env VERBOSE=1 C:/Users/wittg/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f Makefile cmTC_b47bd/fast
+        C:/Users/wittg/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_b47bd.dir\\build.make CMakeFiles/cmTC_b47bd.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kzctob'
+        Building C object CMakeFiles/cmTC_b47bd.dir/CheckIncludeFile.c.obj
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -std=gnu99 -fdiagnostics-color=always -o CMakeFiles\\cmTC_b47bd.dir\\CheckIncludeFile.c.obj -c "C:\\Users\\wittg\\Documents\\SAE\\Projekte\\3. Semester\\DnDFighter\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-kzctob\\CheckIncludeFile.c"
+        Linking C executable cmTC_b47bd.exe
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\cmake\\win\\x64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_b47bd.dir\\link.txt --verbose=1
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\cmake\\win\\x64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_b47bd.dir/objects.a
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\ar.exe qc CMakeFiles\\cmTC_b47bd.dir/objects.a @CMakeFiles\\cmTC_b47bd.dir\\objects1.rsp
+        C:\\Users\\wittg\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -Wl,--whole-archive CMakeFiles\\cmTC_b47bd.dir/objects.a -Wl,--no-whole-archive -o cmTC_b47bd.exe -Wl,--out-implib,libcmTC_b47bd.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_b47bd.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kzctob'
+        
+      exitCode: 0
+...
