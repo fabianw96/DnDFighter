@@ -29,7 +29,6 @@ CEntityData::CEntityData(const std::string& a_name, float a_healthPoints, int a_
 /// </summary>
 CEntityData CEntityData::CreatePlayer()
 {
-	
 	int iUserInput;
 	std::set<int> statValues = {15,14,13,12,10,8};
 	std::vector<std::string> statChoices = {"Str", "Dex", "Con", "Int", "Wis", "Char"};
@@ -38,7 +37,7 @@ CEntityData CEntityData::CreatePlayer()
 	std::vector<int> playerValues = {1,1,1,1,1,1};
 
 	std::cout << "Please enter your Name: ";
-	std::cin >> playerName;	
+	std::cin >> playerName;
 
 	std::cout << "Please distribute your stats. \n";
 	
@@ -66,37 +65,104 @@ CEntityData CEntityData::CreatePlayer()
 		playerValues[i] += iUserInput;
 		statValues.erase(std::ranges::find(statValues, iUserInput));
 		
-		CLEAR_SCREEN;
 	}
 
 	std::cout << "Please choose a class: \n";
 	std::cout << "1. Barbarian \n";
-	std::cout << "2. Monk \n";
-	std::cout << "3. Fighter \n";
+	std::cout << "2. Bard \n";
+	std::cout << "3. Cleric \n";
+	std::cout << "4. Druid \n";
+	std::cout << "5. Fighter \n";
+	std::cout << "6. Monk \n";
+	std::cout << "7. Paladin \n";
+	std::cout << "8. Ranger \n";
+	std::cout << "9. Rogue \n";
+	std::cout << "10. Sorcerer \n";
+	std::cout << "11. Warlock \n";
+	std::cout << "12. Wizard \n";
+
 	
 	std::cin >> iUserInput;
 
-	float playerHealth;
-	float playerAC;
+	float playerHealth = 0;
+	float playerAC = 0;
 	
 	switch (iUserInput)
 	{
+		//Barbarian
 	case 1:
 		{
-			playerHealth = playerValues[2] + 12;
-			playerAC = (playerValues[1] - 10) / 2 + (playerValues[2] - 10) / 2 + 10;
+			playerHealth = CONST_MOD + 12;
+			playerAC = DEX_MOD + CONST_MOD + 10;
 		}
 		break;
+		//Bard
 	case 2:
 		{
-			playerHealth = playerValues[2] + 8;
-			playerAC = (playerValues[1] - 10) / 2 + (playerValues[4] - 10) / 2 + 10;
+			playerHealth = CONST_MOD + 8;
+			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
+		//Cleric
 	case 3:
 		{
-			playerHealth = playerValues[2] + 10;
-			playerAC = (playerValues[1] - 10) / 2 + 10;
+			playerHealth = CONST_MOD + 8;
+			playerAC = BASE_ARMOR_CLASS;
+		}
+		break;
+		//Druid
+	case 4:
+		{
+			playerHealth = CONST_MOD + 8;
+			playerAC = BASE_ARMOR_CLASS;
+		}
+		break;
+	case 5:
+		{
+			playerHealth = CONST_MOD + 10;
+			playerAC = DEX_MOD + 10;
+		}
+		break;
+	case 6:
+		{
+			playerHealth = CONST_MOD + 8;
+			playerAC = DEX_MOD + WIS_MOD + 10;
+		}
+		break;
+	case 7:
+		{
+			playerHealth = CONST_MOD + 10;
+			playerAC = BASE_ARMOR_CLASS;
+		}
+		break;
+	case 8:
+		{
+			playerHealth = CONST_MOD + 10;
+			playerAC = BASE_ARMOR_CLASS;
+		}
+		break;
+	case 9:
+		{
+			playerHealth = CONST_MOD + 8;
+			playerAC = BASE_ARMOR_CLASS;
+		}
+		break;
+	case 10:
+		{
+			playerHealth = CONST_MOD + 6;
+			playerAC = BASE_ARMOR_CLASS;
+		}
+		break;
+	case 11:
+		{
+			playerHealth = CONST_MOD + 8;
+			playerAC = BASE_ARMOR_CLASS;
+		}
+		break;
+	case 12:
+		{
+			playerHealth = CONST_MOD + 6;
+			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
 	default:

@@ -6,6 +6,15 @@
 #include <sstream>
 #include <string>
 
+#define STR_MOD ((playerValues[0] - 10) / 2)
+#define DEX_MOD ((playerValues[1] - 10) / 2)
+#define CONST_MOD ((playerValues[2] - 10) / 2)
+#define INT_MOD ((playerValues[3] - 10) / 2)
+#define WIS_MOD ((playerValues[4] - 10) / 2)
+#define CHAR_MOD ((playerValues[5] - 10) / 2)
+
+#define BASE_ARMOR_CLASS 10
+
 class CEntityData
 {
 private:
@@ -27,7 +36,7 @@ public:
 	CEntityData(const std::string& a_name, float a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level = 0, bool a_isAlive = true);
 	CEntityData CreatePlayer();
 
-	std::string GetName() { return m_sName; }
+	[[nodiscard]] std::string GetName() const { return m_sName; }
 	[[nodiscard]] float GetHealthPoints() const { return m_iHealthPoints; }
 	[[nodiscard]] int GetArmorClass() const { return m_iArmorClass; }
 	[[nodiscard]] int GetStrength() const { return m_iStrength; }

@@ -5,7 +5,7 @@
 #ifndef GAME_H
 #define GAME_H
 #include <memory>
-
+#include <random>
 #include "EntityData.h"
 #include "raylib.h"
 #include "WindowManager.h"
@@ -18,6 +18,8 @@ private:
 public:
     void InitGame(const CEntityData& player, const std::vector<CEntityData>& monsters);
     void PopulateMonsterGroups(const std::vector<CEntityData>& monsters);
+    void ChooseRandomMonster(const CEntityData& player);
+    void StartFight(const CEntityData& player, const CEntityData& chosenMonster);
 };
 
 #endif //GAME_H
