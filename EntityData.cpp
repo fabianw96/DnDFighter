@@ -1,11 +1,9 @@
 #include <iostream>
 #include <algorithm>
 #include "EntityData.h"
-
 #include <map>
 #include <set>
 
-#include "HelperMacros.h"
 
 CEntityData::CEntityData() = default;
 

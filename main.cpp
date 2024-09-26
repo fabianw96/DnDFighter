@@ -8,7 +8,6 @@
 
 int main()
 {
-    bool bUseRaylib = true;
     //Print intro text
     //Let Player create a character
         //Player can choose a class and spend points on stats.
@@ -23,7 +22,8 @@ int main()
             //If the value is higher than the enemies AC the attack hits
         //If the attack hits, damage is calculated based on the equipped weapon + their stats
         //The damage is then subtracted from the HP of the character that got hit
-    
+
+    bool bUseRaylib = true;
     const std::unique_ptr<CMonsterFactory> factory (new CMonsterFactory);
     const std::unique_ptr<CEntityData> entity_data (new CEntityData);
     const std::unique_ptr<WindowManager> window_manager (new WindowManager);

@@ -245,6 +245,30 @@ update_mappings/fast:
 	$(MAKE) $(MAKESILENT) -f libs\raylib\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\build.make libs/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
 .PHONY : update_mappings/fast
 
+Dice.obj: Dice.cpp.obj
+.PHONY : Dice.obj
+
+# target to build an object file
+Dice.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/Dice.cpp.obj
+.PHONY : Dice.cpp.obj
+
+Dice.i: Dice.cpp.i
+.PHONY : Dice.i
+
+# target to preprocess a source file
+Dice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/Dice.cpp.i
+.PHONY : Dice.cpp.i
+
+Dice.s: Dice.cpp.s
+.PHONY : Dice.s
+
+# target to generate assembly for a file
+Dice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/Dice.cpp.s
+.PHONY : Dice.cpp.s
+
 EntityData.obj: EntityData.cpp.obj
 .PHONY : EntityData.obj
 
@@ -408,6 +432,9 @@ help:
 	@echo ... DnDFighter
 	@echo ... glfw
 	@echo ... raylib
+	@echo ... Dice.obj
+	@echo ... Dice.i
+	@echo ... Dice.s
 	@echo ... EntityData.obj
 	@echo ... EntityData.i
 	@echo ... EntityData.s

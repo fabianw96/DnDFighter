@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/DnDFighter.dir/Dice.cpp.obj"
+  "CMakeFiles/DnDFighter.dir/Dice.cpp.obj.d"
   "CMakeFiles/DnDFighter.dir/EntityData.cpp.obj"
   "CMakeFiles/DnDFighter.dir/EntityData.cpp.obj.d"
   "CMakeFiles/DnDFighter.dir/Game.cpp.obj"

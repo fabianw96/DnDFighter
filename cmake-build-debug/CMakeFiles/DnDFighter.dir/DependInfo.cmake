@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/Dice.cpp" "CMakeFiles/DnDFighter.dir/Dice.cpp.obj" "gcc" "CMakeFiles/DnDFighter.dir/Dice.cpp.obj.d"
   "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/EntityData.cpp" "CMakeFiles/DnDFighter.dir/EntityData.cpp.obj" "gcc" "CMakeFiles/DnDFighter.dir/EntityData.cpp.obj.d"
   "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/Game.cpp" "CMakeFiles/DnDFighter.dir/Game.cpp.obj" "gcc" "CMakeFiles/DnDFighter.dir/Game.cpp.obj.d"
   "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/MonsterFactory.cpp" "CMakeFiles/DnDFighter.dir/MonsterFactory.cpp.obj" "gcc" "CMakeFiles/DnDFighter.dir/MonsterFactory.cpp.obj.d"

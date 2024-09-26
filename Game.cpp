@@ -50,8 +50,6 @@ void Game::ChooseRandomMonster(const CEntityData& player)
         std::uniform_int_distribution<> distribution(0, highLevelMonster.size());
         StartFight(player, highLevelMonster[distribution(rng)]);
     }
-
-    
 }
 
 void Game::StartFight(const CEntityData& player, const CEntityData& chosenMonster)
@@ -60,7 +58,10 @@ void Game::StartFight(const CEntityData& player, const CEntityData& chosenMonste
     //higher init rolls for AC first
     //dmg is dealt if roll is even or higher to enemy AC
     //dmg is then dealt with dmg die
-    std::cout << "Today fighting: " << chosenMonster.GetName() << " vs. " << player.GetName();
+    std::cout << "Today fighting: " << chosenMonster.GetName() << " vs. " << player.GetName() << "\n";
+    
+    std::cout << Dice::RollDice(DT_D20);
+    
 }
 
 

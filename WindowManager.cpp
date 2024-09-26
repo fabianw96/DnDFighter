@@ -45,9 +45,7 @@ void WindowManager::ManageGameWindow()
                 {
                     currentScreen = GS_GAMEPLAY;
                 }
-
-                if (CheckCollisionPointRec(GetMousePosition(), textBox)) mouseOnText = true;
-                else mouseOnText = false;
+                mouseOnText = CheckCollisionPointRec(GetMousePosition(), textBox);
 
                 if (mouseOnText)
                 {

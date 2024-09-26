@@ -5,6 +5,8 @@
 #include <vector>
 #include <sstream>
 #include <string>
+#include "HelperMacros.h"
+
 
 #define STR_MOD ((playerValues[0] - 10) / 2)
 #define DEX_MOD ((playerValues[1] - 10) / 2)
