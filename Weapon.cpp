@@ -24,10 +24,34 @@ std::vector<Weapon> Weapon::CreateWeapons() {
         const std::string& name = data.first;
         const std::vector<int>& diceType = data.second;
 
+        Weapon weapon;
 
-
+        switch (diceType) {
+            case 4:
+                weapon = Weapon(name, DT_D4);
+                weapons.emplace_back(weapon);
+                break;
+            case 6:
+                weapon = Weapon(name, DT_D6);
+                weapons.emplace_back(weapon);
+                break;
+            case 8:
+                weapon = Weapon(name, DT_D8);
+                weapons.emplace_back(weapon);
+                break;
+            case 10:
+                weapon = Weapon(name, DT_D10);
+                weapons.emplace_back(weapon);
+                break;
+            case 12:
+                weapon = Weapon(name, DT_D12);
+                weapons.emplace_back(weapon);
+                break;
+            default:
+                std::cout << "Error: Dice type for Weapon: " << name << " not found!\n";
+                break;
+        }
     }
 
     return weapons;
-
 }
