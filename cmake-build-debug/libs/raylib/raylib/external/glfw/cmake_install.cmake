@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src/external/glfw
+# Install script for directory: E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib/src/external/glfw
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/CPPConsoleProject")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/DnDFighter")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/libs/raylib/raylib/external/glfw/src/cmake_install.cmake")
+  include("E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/libs/raylib/raylib/external/glfw/src/cmake_install.cmake")
 endif()
 

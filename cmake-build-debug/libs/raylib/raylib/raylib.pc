@@ -1,4 +1,4 @@
-prefix=C:/Program Files (x86)/CPPConsoleProject
+prefix=C:/Program Files (x86)/DnDFighter
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

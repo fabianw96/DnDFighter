@@ -1,13 +1,15 @@
 #ifndef MONSTERFACTORY_H
 #define MONSTERFACTORY_H
 #include <vector>
-
 #include "EntityData.h"
+#include <iostream>
+#include <numeric>
+#include "CsvReader.h"
 
-class CMonsterFactory
+class MonsterFactory
 {
 public:
-	std::vector<CEntityData> CreateMonster();
+	std::vector<EntityData> CreateMonster();
 };
 
 #endif

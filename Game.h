@@ -10,18 +10,20 @@
 #include "raylib.h"
 #include "WindowManager.h"
 #include "Dice.h"
+#include "Weapon.h"
 
 class Game {
 private:
-    std::vector<CEntityData> lowLevelMonster;
-    std::vector<CEntityData> midLevelMonster;
-    std::vector<CEntityData> highLevelMonster;
+    std::vector<EntityData> m_lowLevelMonster;
+    std::vector<EntityData> m_midLevelMonster;
+    std::vector<EntityData> m_highLevelMonster;
     
 public:
-    void InitGame(const CEntityData& player, const std::vector<CEntityData>& monsters);
-    void PopulateMonsterGroups(const std::vector<CEntityData>& monsters);
-    void ChooseRandomMonster(const CEntityData& player);
-    void StartFight(const CEntityData& player, const CEntityData& chosenMonster);
+    void InitGame(const EntityData& player, const std::vector<EntityData>& monsters, const std::vector<Weapon>& weapons);
+    void PopulateMonsterGroups(const std::vector<EntityData>& monsters);
+    void ChooseRandomMonster(const EntityData& player);
+    void StartFight(const EntityData& player, const EntityData& chosenMonster);
+    void Attack(const EntityData& attacker, const EntityData& defender);
 };
 
 #endif //GAME_H

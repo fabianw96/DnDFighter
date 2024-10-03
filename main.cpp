@@ -5,6 +5,7 @@
 #include "raylib.h"
 #include "WindowManager.h"
 #include "HelperMacros.h"
+#include "Weapon.h"
 
 int main()
 {
@@ -24,12 +25,14 @@ int main()
         //The damage is then subtracted from the HP of the character that got hit
 
     bool bUseRaylib = true;
-    const std::unique_ptr<CMonsterFactory> factory (new CMonsterFactory);
-    const std::unique_ptr<CEntityData> entity_data (new CEntityData);
+    const std::unique_ptr<MonsterFactory> factory (new MonsterFactory);
+    const std::unique_ptr<Weapon> weapon (new Weapon);
+    const std::unique_ptr<EntityData> entity_data (new EntityData);
     const std::unique_ptr<WindowManager> window_manager (new WindowManager);
     const std::unique_ptr<Game> game (new Game);
 
-    std::vector<CEntityData> monsters = factory->CreateMonster();
+    std::vector<EntityData> monsters = factory->CreateMonster();
+    std::vector<Weapon> weapons = weapon->CreateWeapons();
 
     //choose a way to play the game
     std::cout << "Please choose a way to open the game: [0] Peter mode [1] Raylib \n";
@@ -37,8 +40,8 @@ int main()
 
     if (!bUseRaylib)
     {
-        CEntityData player = entity_data->CreatePlayer();
-        game->InitGame(player, monsters);
+        EntityData player = entity_data->CreatePlayer();
+        game->InitGame(player, monsters,weapons);
     }
     else
     {

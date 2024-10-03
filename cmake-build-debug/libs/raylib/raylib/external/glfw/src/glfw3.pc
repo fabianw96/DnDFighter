@@ -1,7 +1,7 @@
-prefix=C:/Program Files (x86)/CPPConsoleProject
+prefix=C:/Program Files (x86)/DnDFighter
 exec_prefix=${prefix}
-includedir=C:/Program Files (x86)/CPPConsoleProject/include
-libdir=C:/Program Files (x86)/CPPConsoleProject/lib
+includedir=C:/Program Files (x86)/DnDFighter/include
+libdir=C:/Program Files (x86)/DnDFighter/lib
 
 Name: GLFW
 Description: A multi-platform library for OpenGL, window and input

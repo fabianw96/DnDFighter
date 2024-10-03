@@ -1,31 +1,27 @@
-#include <iostream>
-#include <algorithm>
 #include "EntityData.h"
-#include <map>
-#include <set>
 
 
-CEntityData::CEntityData() = default;
+EntityData::EntityData() = default;
 
-CEntityData::CEntityData(const std::string& a_name, float a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level, bool a_isAlive)
+EntityData::EntityData(const std::string& a_name, float a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level, bool a_isAlive)
 {
-	m_sName = a_name;
-	m_iHealthPoints = a_healthPoints;
-	m_iArmorClass = a_armorClass;
-	m_iStrength = a_strength;
-	m_iDexterity = a_dexterity;
-	m_iConstitution = a_constitution;
-	m_iIntelligence = a_intelligence;
-	m_iWisdom = a_wisdom;
-	m_iCharisma = a_charisma;
-	m_iLevel = a_level;
-	m_bIsAlive = a_isAlive;
+	m_Name = a_name;
+	m_HealthPoints = a_healthPoints;
+	m_ArmorClass = a_armorClass;
+	m_Strength = a_strength;
+	m_Dexterity = a_dexterity;
+	m_Constitution = a_constitution;
+	m_Intelligence = a_intelligence;
+	m_Wisdom = a_wisdom;
+	m_Charisma = a_charisma;
+	m_Level = a_level;
+	m_IsAlive = a_isAlive;
 }
 
 /// <summary>
 /// <para> Create a player from Userinput</para>
 /// </summary>
-CEntityData CEntityData::CreatePlayer()
+EntityData EntityData::CreatePlayer()
 {
 	int iUserInput;
 	std::set<int> statValues = {15,14,13,12,10,8};
@@ -84,82 +80,83 @@ CEntityData CEntityData::CreatePlayer()
 
 	float playerHealth = 0;
 	float playerAC = 0;
-	
+
+	//0=str, 1=dex, 2=const, 3=int, 4=wis, 5=char
 	switch (iUserInput)
 	{
 		//Barbarian
 	case 1:
 		{
-			playerHealth = CONST_MOD + 12;
-			playerAC = DEX_MOD + CONST_MOD + 10;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 12;
+			playerAC = GetAbilityModifier(playerValues[1]) + GetAbilityModifier(playerValues[2]) + 10;
 		}
 		break;
 		//Bard
 	case 2:
 		{
-			playerHealth = CONST_MOD + 8;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 8;
 			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
 		//Cleric
 	case 3:
 		{
-			playerHealth = CONST_MOD + 8;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 8;
 			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
 		//Druid
 	case 4:
 		{
-			playerHealth = CONST_MOD + 8;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 8;
 			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
 	case 5:
 		{
-			playerHealth = CONST_MOD + 10;
-			playerAC = DEX_MOD + 10;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 10;
+			playerAC = GetAbilityModifier(playerValues[1]) + 10;
 		}
 		break;
 	case 6:
 		{
-			playerHealth = CONST_MOD + 8;
-			playerAC = DEX_MOD + WIS_MOD + 10;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 8;
+			playerAC = GetAbilityModifier(playerValues[1]) + GetAbilityModifier(playerValues[4]) + 10;
 		}
 		break;
 	case 7:
 		{
-			playerHealth = CONST_MOD + 10;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 10;
 			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
 	case 8:
 		{
-			playerHealth = CONST_MOD + 10;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 10;
 			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
 	case 9:
 		{
-			playerHealth = CONST_MOD + 8;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 8;
 			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
 	case 10:
 		{
-			playerHealth = CONST_MOD + 6;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 6;
 			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
 	case 11:
 		{
-			playerHealth = CONST_MOD + 8;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 8;
 			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
 	case 12:
 		{
-			playerHealth = CONST_MOD + 6;
+			playerHealth = GetAbilityModifier(playerValues[2]) + 6;
 			playerAC = BASE_ARMOR_CLASS;
 		}
 		break;
@@ -168,60 +165,12 @@ CEntityData CEntityData::CreatePlayer()
 		break;
 	}
 
-	CEntityData Player = CEntityData(playerName, playerHealth, playerAC, playerValues[0], playerValues[1], playerValues[2], playerValues[3], playerValues[4], playerValues[5], 1);	
+	EntityData Player = EntityData(playerName, playerHealth, playerAC, playerValues[0], playerValues[1], playerValues[2], playerValues[3], playerValues[4], playerValues[5], 1);	
 
 	return Player;
 }
 
-/// <summary>
-/// <para> Function to extract Data from a CSV file. </para>
-/// <param name="filename"> Path to CSV file </param>
-/// <returns> A vector of a pair consisting of a string and a int vector </returns>
-/// </summary>
-std::vector<std::pair<std::string, std::vector<int>>> CEntityData::ReadCsvData(const std::string& filename)
-{
-	//maybe use map/dictionary?
-	std::vector<std::pair<std::string, std::vector<int>>> resultData;
-
-	std::ifstream inputFile(filename);
-
-	if (!inputFile.is_open()) throw std::runtime_error("Could not open CSV ");
-
-	std::string line;
-	std::string colname;
-	int value;
-
-	if (inputFile.good())
-	{
-		std::getline(inputFile, line);
-
-		std::stringstream ss(line);
-
-		while (std::getline(ss, colname, ','))
-		{
-			resultData.emplace_back(colname, std::vector<int> {});
-		}
-	}
-
-	while (std::getline(inputFile, line))
-	{
-		std::stringstream ss(line);
-
-		int colIdx = 0;
-
-		while (ss >> value)
-		{
-			resultData.at(colIdx).second.emplace_back(value);
-
-			if (ss.peek() == ',') ss.ignore();
-
-			colIdx++;
-		}
-	}
-
-	inputFile.close();
-
-	return resultData;
+void EntityData::GetHit(int takenDamage) const {
+	m_HealthPoints -= takenDamage;
 }
-
 
