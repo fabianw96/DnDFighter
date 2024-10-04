@@ -245,6 +245,30 @@ update_mappings/fast:
 	$(MAKE) $(MAKESILENT) -f libs\raylib\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\build.make libs/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
 .PHONY : update_mappings/fast
 
+CsvReader.obj: CsvReader.cpp.obj
+.PHONY : CsvReader.obj
+
+# target to build an object file
+CsvReader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/CsvReader.cpp.obj
+.PHONY : CsvReader.cpp.obj
+
+CsvReader.i: CsvReader.cpp.i
+.PHONY : CsvReader.i
+
+# target to preprocess a source file
+CsvReader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/CsvReader.cpp.i
+.PHONY : CsvReader.cpp.i
+
+CsvReader.s: CsvReader.cpp.s
+.PHONY : CsvReader.s
+
+# target to generate assembly for a file
+CsvReader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DnDFighter.dir\build.make CMakeFiles/DnDFighter.dir/CsvReader.cpp.s
+.PHONY : CsvReader.cpp.s
+
 Dice.obj: Dice.cpp.obj
 .PHONY : Dice.obj
 
@@ -432,6 +456,9 @@ help:
 	@echo ... DnDFighter
 	@echo ... glfw
 	@echo ... raylib
+	@echo ... CsvReader.obj
+	@echo ... CsvReader.i
+	@echo ... CsvReader.s
 	@echo ... Dice.obj
 	@echo ... Dice.i
 	@echo ... Dice.s

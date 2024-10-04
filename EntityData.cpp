@@ -3,7 +3,7 @@
 
 EntityData::EntityData() = default;
 
-EntityData::EntityData(const std::string& a_name, float a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level, bool a_isAlive)
+EntityData::EntityData(const std::string& a_name, int a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level, bool a_isAlive)
 {
 	m_Name = a_name;
 	m_HealthPoints = a_healthPoints;

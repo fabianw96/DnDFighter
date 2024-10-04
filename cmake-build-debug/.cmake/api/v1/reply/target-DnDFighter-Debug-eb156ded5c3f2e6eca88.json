@@ -69,7 +69,7 @@
 			[
 				{
 					"backtrace" : 5,
-					"define" : "ASSETS_PATH\"E:/SAE/Projects/3. Semester/DnDFighter/assets/\""
+					"define" : "ASSETS_PATH\"C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/assets/\""
 				},
 				{
 					"backtrace" : 2,
@@ -84,11 +84,11 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib/src"
+					"path" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib/src/external/glfw/include"
+					"path" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src/external/glfw/include"
 				}
 			],
 			"language" : "CXX",

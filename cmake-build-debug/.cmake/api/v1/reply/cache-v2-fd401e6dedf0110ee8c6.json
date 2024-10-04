@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "e:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug"
+			"value" : "c:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -574,22 +574,6 @@
 			"value" : ""
 		},
 		{
-			"name" : "CMAKE_EXPORT_COMPILE_COMMANDS",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Enable/Disable output of compile commands during generation."
-				}
-			],
-			"type" : "BOOL",
-			"value" : ""
-		},
-		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
 			"properties" : 
 			[
@@ -611,7 +595,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -623,7 +607,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Ninja"
+			"value" : "MinGW Makefiles"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_INSTANCE",
@@ -695,7 +679,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "E:/SAE/Projects/3. Semester/DnDFighter"
+			"value" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -986,12 +970,16 @@
 			"properties" : 
 			[
 				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Path to a program."
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : "C:/Users/wittg/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe"
+			"type" : "FILEPATH",
+			"value" : "C:/Users/wittg/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -1711,7 +1699,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/libs/raylib"
+			"value" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/libs/raylib"
 		},
 		{
 			"name" : "DnDFighter_IS_TOP_LEVEL",
@@ -1735,7 +1723,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib"
+			"value" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib"
 		},
 		{
 			"name" : "ENABLE_ASAN",
@@ -1795,7 +1783,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/libs/raylib/raylib/external/glfw"
+			"value" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/libs/raylib/raylib/external/glfw"
 		},
 		{
 			"name" : "GLFW_BUILD_DOCS",
@@ -1915,7 +1903,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib/src/external/glfw"
+			"value" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src/external/glfw"
 		},
 		{
 			"name" : "GLFW_USE_HYBRID_HPG",
@@ -2115,7 +2103,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/libs/raylib/raylib"
+			"value" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/libs/raylib/raylib"
 		},
 		{
 			"name" : "raylib_IS_TOP_LEVEL",
@@ -2151,7 +2139,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib/src"
+			"value" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src"
 		}
 	],
 	"kind" : "cache",

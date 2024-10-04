@@ -1,8 +1,8 @@
-if(NOT EXISTS "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/install_manifest.txt")
+if(NOT EXISTS "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/install_manifest.txt")
 endif()
 
-file(READ "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/install_manifest.txt" files)
+file(READ "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
   message(STATUS "Uninstalling $ENV{DESTDIR}${file}")

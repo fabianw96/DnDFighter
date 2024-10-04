@@ -15,11 +15,11 @@ void Game::PopulateMonsterGroups(const std::vector<EntityData>& monsters)
 {
     for (const auto & monster : monsters)
     {
-        if (monster.GetLevel() < 5)
+        if (monster.GetHealthPoints() < 40)
         {
             m_lowLevelMonster.emplace_back(monster);
         }
-        else if (monster.GetLevel() >= 5 && monster.GetLevel() < 10)
+        else if (monster.GetHealthPoints() >= 40 && monster.GetHealthPoints() < 100)
         {
             m_midLevelMonster.emplace_back(monster);
         }
@@ -63,7 +63,7 @@ void Game::StartFight(const EntityData& player, const EntityData& chosenMonster)
     //dmg is dealt if roll is even or higher to enemy AC
     //dmg is then dealt with dmg die
     std::cout << "Today fighting: " << player.GetName() << " vs. " << chosenMonster.GetName() << "\n";
-    std::cout << player.GetHealthPoints() << " : " << chosenMonster.GetHealthPoints();
+    std::cout << player.GetHealthPoints() << " : " << chosenMonster.GetHealthPoints() << "\n";
     std::cout << "Roll for Initiative!\n";
     playerInit += Dice::RollDice(DT_D20);
     std::cout << player.GetName() << " rolled a " << playerInit << "\n";
@@ -82,7 +82,6 @@ void Game::StartFight(const EntityData& player, const EntityData& chosenMonster)
         Attack(attacker, defender);
     }
 }
-
 
 //TODO: Implement weapons!
 void Game::Attack(const EntityData& attacker, const EntityData& defender) {

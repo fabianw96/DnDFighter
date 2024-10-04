@@ -32,7 +32,7 @@ private:
 
 public:
 	EntityData();
-	EntityData(const std::string& a_name, float a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level = 0, bool a_isAlive = true);
+	EntityData(const std::string& a_name, int a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level = 0, bool a_isAlive = true);
 	EntityData CreatePlayer();
 	void GetHit(int takenDamage) const;
 

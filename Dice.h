@@ -5,8 +5,9 @@
 #ifndef DICE_H
 #define DICE_H
 #include <random>
-
+#include <thread>
 #include <iostream>
+
 
 
 enum EDiceType
