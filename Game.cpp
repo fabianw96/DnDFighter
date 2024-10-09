@@ -4,8 +4,7 @@
 
 #include "Game.h"
 
-
-void Game::InitGame(const EntityData& player, const std::vector<EntityData>& monsters, const std::vector<Weapon>& weapons)
+void Game::InitGame(const EntityData& player, const std::vector<EntityData>& monsters)
 {
     PopulateMonsterGroups(monsters);
     ChooseRandomMonster(player);
@@ -15,11 +14,11 @@ void Game::PopulateMonsterGroups(const std::vector<EntityData>& monsters)
 {
     for (const auto & monster : monsters)
     {
-        if (monster.GetHealthPoints() < 40)
+        if (monster.GetHealthPoints() < 20)
         {
             m_lowLevelMonster.emplace_back(monster);
         }
-        else if (monster.GetHealthPoints() >= 40 && monster.GetHealthPoints() < 100)
+        else if (monster.GetHealthPoints() >= 20 && monster.GetHealthPoints() < 70)
         {
             m_midLevelMonster.emplace_back(monster);
         }
@@ -83,11 +82,13 @@ void Game::StartFight(const EntityData& player, const EntityData& chosenMonster)
     }
 }
 
-//TODO: Implement weapons!
-void Game::Attack(const EntityData& attacker, const EntityData& defender) {
-    int hitRoll = Dice::RollDice(DT_D20) + attacker.GetAbilityModifier(attacker.GetStrength());
 
-    if (defender.GetHealthPoints() > 0 && attacker.GetHealthPoints() > 0) {
+void Game::Attack(EntityData& attacker, EntityData& defender) {
+
+    while (defender.GetHealthPoints() > 0 && attacker.GetHealthPoints() > 0)
+    {
+        const int hitRoll = Dice::RollDice(DT_D20) + attacker.GetAbilityModifier(attacker.GetStrength());
+
         if (hitRoll < defender.GetArmorClass())
         {
             std::cout << attacker.GetName() << " rolled a " << hitRoll << " against " << defender.GetName() << "'s AC of " << defender.GetArmorClass() <<". The attack missed the Target\n";
@@ -96,23 +97,23 @@ void Game::Attack(const EntityData& attacker, const EntityData& defender) {
         {
             std::cout << attacker.GetName() << " rolled a " << hitRoll << " against " << defender.GetName() << "'s AC of " << defender.GetArmorClass() <<". The attack hit!\n";
             std::cout << "Rolling for damage!\n";
-            int damageDealt = Dice::RollDice(DT_D6) + attacker.GetAbilityModifier(attacker.GetStrength());
+            const int damageDealt = Dice::RollDice(attacker.GetWeaponDice()) + attacker.GetAbilityModifier(attacker.GetStrength());
             std::cout << attacker.GetName() << " hit " << defender.GetName() << " for " << damageDealt << " Damage!\n";
             defender.GetHit(damageDealt);
         }
 
-        Attack(defender, attacker);
+        Swap(attacker, defender);
     }
-    else
-    {
-        std::cout << "The fight ended! " << attacker.GetName() << " : " << attacker.GetHealthPoints() << "HP left\n";
-        std::cout << "The fight ended! " << defender.GetName() << " : " << defender.GetHealthPoints() << "HP left\n";
-    }
+
+    std::cout << "The fight ended! " << attacker.GetName() << " : " << attacker.GetHealthPoints() << "HP left\n";
+    std::cout << "The fight ended! " << defender.GetName() << " : " << defender.GetHealthPoints() << "HP left\n";
+
+
 }
 
-
-
-
-
-
-
+void Game::Swap(EntityData& attacker, EntityData& defender)
+{
+    EntityData temp = defender;
+    defender = attacker;
+    attacker = temp;
+}

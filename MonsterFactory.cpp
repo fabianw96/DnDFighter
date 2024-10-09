@@ -15,7 +15,8 @@ std::vector<EntityData> MonsterFactory::CreateMonster()
 
 		if (stats.size() >= 9)
 		{
-			EntityData monster(name, static_cast<float>(stats[0]), stats[1], stats[2], stats[3], stats[4], stats[5], stats[6], stats[7], stats[8]);
+			EntityData monster(name, stats[0], stats[1], stats[2], stats[3], stats[4], stats[5],
+			                   stats[6], stats[7], Weapon(), stats[8]);
 			monsters.emplace_back(monster);
 		}
 		else {

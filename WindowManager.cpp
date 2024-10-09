@@ -12,6 +12,8 @@ void WindowManager::CreateGameWindow()
     ManageGameWindow();
 }
 
+
+
 void WindowManager::ManageGameWindow()
 {
     GameScreen currentScreen = GS_LOGO;
@@ -45,37 +47,8 @@ void WindowManager::ManageGameWindow()
                 {
                     currentScreen = GS_GAMEPLAY;
                 }
-                mouseOnText = CheckCollisionPointRec(GetMousePosition(), textBox);
 
-                if (mouseOnText)
-                {
-                    SetMouseCursor(MOUSE_CURSOR_IBEAM);
-
-                    int key = GetCharPressed();
-
-                    while (key > 0)
-                    {
-                        if ((key >= 32) && (key <= 125) && (letterCount < MAX_INPUT_CHARS))
-                        {
-                            name[letterCount] = static_cast<char>(key);
-                            name[letterCount + 1] = '\0';
-                            letterCount++;
-                        }
-
-                        key = GetCharPressed();
-                    }
-
-                    if (IsKeyPressed(KEY_BACKSPACE))
-                    {
-                        letterCount--;
-                        if (letterCount < 0) letterCount = 0;
-                        name[letterCount] = '\0';
-                    }
-                }
-                else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
-
-                if (mouseOnText) framesCounter ++;
-                else framesCounter = 0;
+                EvaluateInput(name, letterCount, textBox, mouseOnText, framesCounter);
             }
             break;
         case GS_GAMEPLAY:
@@ -155,3 +128,37 @@ void WindowManager::ManageGameWindow()
     CloseWindow();
 }
 
+void WindowManager::EvaluateInput(char name[10], int& letterCount, Rectangle textBox, bool& mouseOnText, int& framesCounter)
+{
+    mouseOnText = CheckCollisionPointRec(GetMousePosition(), textBox);
+
+    if (mouseOnText)
+    {
+        SetMouseCursor(MOUSE_CURSOR_IBEAM);
+
+        int key = GetCharPressed();
+
+        while (key > 0)
+        {
+            if ((key >= 32) && (key <= 125) && (letterCount < MAX_INPUT_CHARS))
+            {
+                name[letterCount] = static_cast<char>(key);
+                name[letterCount + 1] = '\0';
+                letterCount++;
+            }
+
+            key = GetCharPressed();
+        }
+
+        if (IsKeyPressed(KEY_BACKSPACE))
+        {
+            letterCount--;
+            if (letterCount < 0) letterCount = 0;
+            name[letterCount] = '\0';
+        }
+    }
+    else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
+
+    if (mouseOnText) framesCounter ++;
+    else framesCounter = 0;
+}

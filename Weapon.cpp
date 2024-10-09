@@ -4,9 +4,13 @@
 
 #include "Weapon.h"
 
-Weapon::Weapon() = default;
+Weapon::Weapon()
+{
+    m_name = "No Weapon";
+    m_diceType = DT_D6;
+}
 
-Weapon::Weapon(const std::string &a_name, EDiceType a_diceType) {
+Weapon::Weapon(const std::string &a_name, const EDiceType a_diceType) {
     m_name = a_name;
     m_diceType = a_diceType;
 }

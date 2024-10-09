@@ -12,6 +12,7 @@
 #include <vector>
 
 #include "HelperMacros.h"
+#include "Weapon.h"
 
 #define BASE_ARMOR_CLASS 10
 
@@ -29,11 +30,14 @@ private:
 	int m_Charisma = 0;
 	int m_Level = 0;
 	bool m_IsAlive = true;
+	Weapon m_weapon;
 
 public:
 	EntityData();
-	EntityData(const std::string& a_name, int a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level = 0, bool a_isAlive = true);
-	EntityData CreatePlayer();
+	EntityData(const std::string& a_name, int a_healthPoints, int a_armorClass, int a_strength, int a_dexterity,
+	           int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, const Weapon& a_weapon,
+	           int a_level = 0, bool a_isAlive = true);
+	EntityData CreatePlayer(const std::vector<Weapon>& weapons);
 	void GetHit(int takenDamage) const;
 
 	[[nodiscard]] std::string GetName() const { return m_Name; }
@@ -48,5 +52,6 @@ public:
 	[[nodiscard]] int GetLevel() const { return m_Level; }
 	[[nodiscard]] bool GetIsAlive() const { return m_IsAlive; }
 	[[nodiscard]] int GetAbilityModifier(int ability) const { return ((ability - 10) / 2); }
+	[[nodiscard]] EDiceType GetWeaponDice() const { return m_weapon.GetDiceType(); }
 };
 #endif // !ENTITYDATA_H

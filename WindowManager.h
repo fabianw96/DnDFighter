@@ -24,6 +24,7 @@ private:
 public:
     void CreateGameWindow();
     void ManageGameWindow();
+    void EvaluateInput(char name[10], int& letterCount, Rectangle textBox, bool& mouseOnText, int& framesCounter);
 };
 
 

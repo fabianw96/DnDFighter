@@ -19,11 +19,12 @@ private:
     std::vector<EntityData> m_highLevelMonster;
     
 public:
-    void InitGame(const EntityData& player, const std::vector<EntityData>& monsters, const std::vector<Weapon>& weapons);
+    void InitGame(const EntityData& player, const std::vector<EntityData>& monsters);
     void PopulateMonsterGroups(const std::vector<EntityData>& monsters);
     void ChooseRandomMonster(const EntityData& player);
     void StartFight(const EntityData& player, const EntityData& chosenMonster);
-    void Attack(const EntityData& attacker, const EntityData& defender);
+    void Attack(EntityData& attacker, EntityData& defender);
+    void Swap(EntityData& attacker, EntityData& defender);
 };
 
 #endif //GAME_H

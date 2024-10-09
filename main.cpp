@@ -25,14 +25,14 @@ int main()
         //The damage is then subtracted from the HP of the character that got hit
 
     bool bUseRaylib = true;
-    const std::unique_ptr<MonsterFactory> factory (new MonsterFactory);
-    const std::unique_ptr<Weapon> weapon (new Weapon);
-    const std::unique_ptr<EntityData> entity_data (new EntityData);
-    const std::unique_ptr<WindowManager> window_manager (new WindowManager);
-    const std::unique_ptr<Game> game (new Game);
+    const std::unique_ptr<MonsterFactory> factory = std::make_unique<MonsterFactory>();
+    const std::unique_ptr<Weapon> weapon = std::make_unique<Weapon>();
+    const std::unique_ptr<EntityData> entity_data = std::make_unique<EntityData>();
+    const std::unique_ptr<WindowManager> window_manager = std::make_unique<WindowManager>();
+    const std::unique_ptr<Game> game = std::make_unique<Game>();
 
-    std::vector<EntityData> monsters = factory->CreateMonster();
-    std::vector<Weapon> weapons = weapon->CreateWeapons();
+    const std::vector<EntityData> monsters = factory->CreateMonster();
+    const std::vector<Weapon> weapons = weapon->CreateWeapons();
 
     //choose a way to play the game
     std::cout << "Please choose a way to open the game: [0] Peter mode [1] Raylib \n";
@@ -40,8 +40,8 @@ int main()
 
     if (!bUseRaylib)
     {
-        EntityData player = entity_data->CreatePlayer();
-        game->InitGame(player, monsters,weapons);
+        const EntityData player = entity_data->CreatePlayer(weapons);
+        game->InitGame(player, monsters);
     }
     else
     {

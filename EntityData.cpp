@@ -3,7 +3,7 @@
 
 EntityData::EntityData() = default;
 
-EntityData::EntityData(const std::string& a_name, int a_healthPoints, int a_armorClass, int a_strength, int a_dexterity, int a_constitution, int a_intelligence, int a_wisdom, int a_charisma, int a_level, bool a_isAlive)
+EntityData::EntityData(const std::string& a_name, const int a_healthPoints, const int a_armorClass, const int a_strength, const int a_dexterity, const int a_constitution, const int a_intelligence, const int a_wisdom, const int a_charisma, const Weapon& a_weapon, const int a_level, const bool a_isAlive)
 {
 	m_Name = a_name;
 	m_HealthPoints = a_healthPoints;
@@ -16,17 +16,18 @@ EntityData::EntityData(const std::string& a_name, int a_healthPoints, int a_armo
 	m_Charisma = a_charisma;
 	m_Level = a_level;
 	m_IsAlive = a_isAlive;
+	m_weapon = a_weapon;
 }
 
 /// <summary>
 /// <para> Create a player from Userinput</para>
 /// </summary>
-EntityData EntityData::CreatePlayer()
+EntityData EntityData::CreatePlayer(const std::vector<Weapon>& weapons)
 {
-	int iUserInput;
+	int userInput;
 	std::set<int> statValues = {15,14,13,12,10,8};
-	std::vector<std::string> statChoices = {"Str", "Dex", "Con", "Int", "Wis", "Char"};
-	
+	const std::vector<std::string> statChoices = {"Str", "Dex", "Con", "Int", "Wis", "Char"};
+
 	std::string playerName;
 	std::vector<int> playerValues = {1,1,1,1,1,1};
 
@@ -34,7 +35,7 @@ EntityData EntityData::CreatePlayer()
 	std::cin >> playerName;
 
 	std::cout << "Please distribute your stats. \n";
-	
+
 	for (int i = 0; i < playerValues.size(); ++i)
 	{
 		std::cout << "Please enter the amount of Stats you want to use for: " << statChoices[i] << "\n";
@@ -47,18 +48,18 @@ EntityData EntityData::CreatePlayer()
 
 		std::cout << "\n";
 
-		std::cin >> iUserInput;
+		std::cin >> userInput;
 
-		while (!statValues.contains(iUserInput))
+		while (!statValues.contains(userInput))
 		{
 			std::cout << "The Value you have entered does not exist. \n";
 			std::cout << "Please try again: ";
-			std::cin >> iUserInput;
+			std::cin >> userInput;
 		}
-		
-		playerValues[i] += iUserInput;
-		statValues.erase(std::ranges::find(statValues, iUserInput));
-		
+
+		playerValues[i] += userInput;
+		statValues.erase(std::ranges::find(statValues, userInput));
+
 	}
 
 	std::cout << "Please choose a class: \n";
@@ -75,37 +76,23 @@ EntityData EntityData::CreatePlayer()
 	std::cout << "11. Warlock \n";
 	std::cout << "12. Wizard \n";
 
-	
-	std::cin >> iUserInput;
 
-	float playerHealth = 0;
-	float playerAC = 0;
+	std::cin >> userInput;
+
+	int playerHealth = 0;
+	int playerAC = 0;
 
 	//0=str, 1=dex, 2=const, 3=int, 4=wis, 5=char
-	switch (iUserInput)
+	switch (userInput)
 	{
-		//Barbarian
 	case 1:
 		{
 			playerHealth = GetAbilityModifier(playerValues[2]) + 12;
 			playerAC = GetAbilityModifier(playerValues[1]) + GetAbilityModifier(playerValues[2]) + 10;
 		}
 		break;
-		//Bard
 	case 2:
-		{
-			playerHealth = GetAbilityModifier(playerValues[2]) + 8;
-			playerAC = BASE_ARMOR_CLASS;
-		}
-		break;
-		//Cleric
 	case 3:
-		{
-			playerHealth = GetAbilityModifier(playerValues[2]) + 8;
-			playerAC = BASE_ARMOR_CLASS;
-		}
-		break;
-		//Druid
 	case 4:
 		{
 			playerHealth = GetAbilityModifier(playerValues[2]) + 8;
@@ -125,11 +112,6 @@ EntityData EntityData::CreatePlayer()
 		}
 		break;
 	case 7:
-		{
-			playerHealth = GetAbilityModifier(playerValues[2]) + 10;
-			playerAC = BASE_ARMOR_CLASS;
-		}
-		break;
 	case 8:
 		{
 			playerHealth = GetAbilityModifier(playerValues[2]) + 10;
@@ -165,12 +147,23 @@ EntityData EntityData::CreatePlayer()
 		break;
 	}
 
-	EntityData Player = EntityData(playerName, playerHealth, playerAC, playerValues[0], playerValues[1], playerValues[2], playerValues[3], playerValues[4], playerValues[5], 1);	
+	std::cout << "Please choose a weapon for your character : \n";
+
+	int i = 0;
+	for (auto const& weapon : weapons)
+	{
+		std::cout << i << " : " << weapon.GetName() << "\n";
+		i++;
+	}
+
+	std::cin >> userInput;
+
+	EntityData Player = EntityData(playerName, playerHealth, playerAC, playerValues[0], playerValues[1], playerValues[2], playerValues[3], playerValues[4], playerValues[5], weapons[userInput], 1);
 
 	return Player;
 }
 
-void EntityData::GetHit(int takenDamage) const {
+void EntityData::GetHit(const int takenDamage) const {
 	m_HealthPoints -= takenDamage;
 }
 

@@ -17,8 +17,9 @@ public:
     Weapon();
     Weapon(const std::string& a_name, EDiceType a_diceType);
     std::vector<Weapon> CreateWeapons();
+
+    [[nodiscard]] std::string GetName() const { return m_name; }
+    [[nodiscard]] EDiceType GetDiceType() const { return m_diceType; }
 };
-
-
 
 #endif //WEAPON_H
