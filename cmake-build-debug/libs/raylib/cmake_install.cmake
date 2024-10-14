@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib
+# Install script for directory: E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/libs/raylib/raylib/cmake_install.cmake")
+  include("E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/libs/raylib/raylib/cmake_install.cmake")
 
 endif()
 

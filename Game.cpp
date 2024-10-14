@@ -10,6 +10,7 @@ void Game::InitGame(const EntityData& player, const std::vector<EntityData>& mon
     ChooseRandomMonster(player);
 }
 
+//organize monsters by difficulty groups
 void Game::PopulateMonsterGroups(const std::vector<EntityData>& monsters)
 {
     for (const auto & monster : monsters)
@@ -29,6 +30,7 @@ void Game::PopulateMonsterGroups(const std::vector<EntityData>& monsters)
     }
 }
 
+//choose a random monster depending on player level
 void Game::ChooseRandomMonster(const EntityData& player)
 {
     std::random_device random_device;
@@ -51,6 +53,7 @@ void Game::ChooseRandomMonster(const EntityData& player)
     }
 }
 
+//determine playerinit and roll for first attacker/defender
 void Game::StartFight(const EntityData& player, const EntityData& chosenMonster)
 {
     int playerInit = player.GetAbilityModifier(player.GetDexterity());
@@ -108,7 +111,24 @@ void Game::Attack(EntityData& attacker, EntityData& defender) {
     std::cout << "The fight ended! " << attacker.GetName() << " : " << attacker.GetHealthPoints() << "HP left\n";
     std::cout << "The fight ended! " << defender.GetName() << " : " << defender.GetHealthPoints() << "HP left\n";
 
+    if (defender.GetIsPlayer()) {
+        int userInput;
+        defender.LevelUp();
+        std::cout << "You beat your enemy. Get a new one? [1(Yes)/0(No)]\n";
+        std::cin >> userInput;
 
+        while (userInput != 1 && userInput != 0) {
+            std::cout << "Not a valid Input! \n";
+        }
+
+        if (userInput == 1) {
+            ChooseRandomMonster(defender);
+        }
+    }
+    else
+    {
+        std::cout << "Looks like you've lost! Good luck next time!";
+    }
 }
 
 void Game::Swap(EntityData& attacker, EntityData& defender)

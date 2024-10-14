@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src/external/glfw/src
+# Install script for directory: E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib/src/external/glfw/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -15,12 +15,11 @@ add_executable(DnDFighter main.cpp
         HelperMacros.h
         Game.cpp
         Game.h
-        WindowManager.cpp
-        WindowManager.h
         Dice.cpp
         Dice.h
         CsvReader.cpp
         CsvReader.h
+        PlayerClass.h
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib)

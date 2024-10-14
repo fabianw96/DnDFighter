@@ -15,12 +15,11 @@ Weapon::Weapon(const std::string &a_name, const EDiceType a_diceType) {
     m_diceType = a_diceType;
 }
 
+//read weapon data from csv and create weapons from data
 std::vector<Weapon> Weapon::CreateWeapons() {
     std::vector<std::pair<std::string, std::vector<int>>> csvData = CsvReader::ReadCsvData("../Weapons.csv");
 
     std::vector<Weapon> weapons;
-
-    //TODO: Create Weapons
 
     for (const auto& data: csvData) {
         const std::string& name = data.first;

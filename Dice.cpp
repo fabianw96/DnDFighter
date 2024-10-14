@@ -5,7 +5,7 @@
 #include "Dice.h"
 
 
-
+//Roll dice depending on dicetype
 int Dice::RollDice(EDiceType diceType)
 {
     std::random_device random_device;

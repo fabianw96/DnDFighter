@@ -128,15 +128,15 @@
 			[
 				{
 					"backtrace" : 6,
-					"path" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src/external/glfw/include"
+					"path" : "E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib/src/external/glfw/include"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/libs/raylib/src/external/glfw/src"
+					"path" : "E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib/src/external/glfw/src"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "C:/Users/wittg/Documents/SAE/Projekte/3. Semester/DnDFighter/cmake-build-debug/libs/raylib/raylib/external/glfw/src"
+					"path" : "E:/SAE/Projects/3. Semester/DnDFighter/cmake-build-debug/libs/raylib/raylib/external/glfw/src"
 				}
 			],
 			"language" : "C",

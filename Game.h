@@ -7,8 +7,6 @@
 #include <memory>
 #include <random>
 #include "EntityData.h"
-#include "raylib.h"
-#include "WindowManager.h"
 #include "Dice.h"
 #include "Weapon.h"
 

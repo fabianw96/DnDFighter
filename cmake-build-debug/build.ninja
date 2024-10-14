@@ -89,14 +89,6 @@ build CMakeFiles/DnDFighter.dir/Game.cpp.obj: CXX_COMPILER__DnDFighter_unscanned
   OBJECT_DIR = CMakeFiles\DnDFighter.dir
   OBJECT_FILE_DIR = CMakeFiles\DnDFighter.dir
 
-build CMakeFiles/DnDFighter.dir/WindowManager.cpp.obj: CXX_COMPILER__DnDFighter_unscanned_Debug E$:/SAE/Projects/3.$ Semester/DnDFighter/WindowManager.cpp || cmake_object_order_depends_target_DnDFighter
-  DEFINES = -DASSETS_PATH"E:/SAE/Projects/3. Semester/DnDFighter/assets/" -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
-  DEP_FILE = CMakeFiles\DnDFighter.dir\WindowManager.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib/src" -I"E:/SAE/Projects/3. Semester/DnDFighter/libs/raylib/src/external/glfw/include"
-  OBJECT_DIR = CMakeFiles\DnDFighter.dir
-  OBJECT_FILE_DIR = CMakeFiles\DnDFighter.dir
-
 build CMakeFiles/DnDFighter.dir/Dice.cpp.obj: CXX_COMPILER__DnDFighter_unscanned_Debug E$:/SAE/Projects/3.$ Semester/DnDFighter/Dice.cpp || cmake_object_order_depends_target_DnDFighter
   DEFINES = -DASSETS_PATH"E:/SAE/Projects/3. Semester/DnDFighter/assets/" -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
   DEP_FILE = CMakeFiles\DnDFighter.dir\Dice.cpp.obj.d
@@ -121,7 +113,7 @@ build CMakeFiles/DnDFighter.dir/CsvReader.cpp.obj: CXX_COMPILER__DnDFighter_unsc
 #############################################
 # Link the executable DnDFighter.exe
 
-build DnDFighter.exe: CXX_EXECUTABLE_LINKER__DnDFighter_Debug CMakeFiles/DnDFighter.dir/main.cpp.obj CMakeFiles/DnDFighter.dir/MonsterFactory.cpp.obj CMakeFiles/DnDFighter.dir/EntityData.cpp.obj CMakeFiles/DnDFighter.dir/Weapon.cpp.obj CMakeFiles/DnDFighter.dir/Game.cpp.obj CMakeFiles/DnDFighter.dir/WindowManager.cpp.obj CMakeFiles/DnDFighter.dir/Dice.cpp.obj CMakeFiles/DnDFighter.dir/CsvReader.cpp.obj | libs/raylib/raylib/libraylib.a libs/raylib/raylib/external/glfw/src/libglfw3.a || libs/raylib/raylib/external/glfw/src/libglfw3.a libs/raylib/raylib/libraylib.a
+build DnDFighter.exe: CXX_EXECUTABLE_LINKER__DnDFighter_Debug CMakeFiles/DnDFighter.dir/main.cpp.obj CMakeFiles/DnDFighter.dir/MonsterFactory.cpp.obj CMakeFiles/DnDFighter.dir/EntityData.cpp.obj CMakeFiles/DnDFighter.dir/Weapon.cpp.obj CMakeFiles/DnDFighter.dir/Game.cpp.obj CMakeFiles/DnDFighter.dir/Dice.cpp.obj CMakeFiles/DnDFighter.dir/CsvReader.cpp.obj | libs/raylib/raylib/libraylib.a libs/raylib/raylib/external/glfw/src/libglfw3.a || libs/raylib/raylib/external/glfw/src/libglfw3.a libs/raylib/raylib/libraylib.a
   FLAGS = -g
   LINK_LIBRARIES = libs/raylib/raylib/libraylib.a  -lopengl32  -lglu32  -lwinmm  libs/raylib/raylib/external/glfw/src/libglfw3.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DnDFighter.dir
